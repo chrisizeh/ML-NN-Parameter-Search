@@ -1,0 +1,186 @@
+% This dataset consists of beer reviews from Beeradvocate. The data span a period of more than 10 years, including all ~1.5 million reviews up to November 2011. Each review includes ratings in terms of five "aspects": appearance, aroma, palate, taste, and overall impression. Reviews include product and user information, followed by each of these five ratings, and a plaintext review. We also have reviews from ratebeer.
+@RELATION beer_reviews
+
+@ATTRIBUTE brewery_id INTEGER
+@ATTRIBUTE brewery_name STRING
+@ATTRIBUTE review_time INTEGER
+@ATTRIBUTE review_overall REAL
+@ATTRIBUTE review_aroma REAL
+@ATTRIBUTE review_appearance REAL
+@ATTRIBUTE review_profilename STRING
+@ATTRIBUTE beer_style STRING
+@ATTRIBUTE review_palate REAL
+@ATTRIBUTE review_taste REAL
+@ATTRIBUTE beer_name STRING
+@ATTRIBUTE beer_abv REAL
+@ATTRIBUTE beer_beerid INTEGER
+
+@DATA
+10325,'Vecchio Birraio',1234817823,1.5,2.0,2.5,stcules,Hefeweizen,1.5,1.5,'Sausa Weizen',5.0,47986
+10325,'Vecchio Birraio',1235915097,3.0,2.5,3.0,stcules,'English Strong Ale',3.0,3.0,'Red Moon',6.2,48213
+10325,'Vecchio Birraio',1235916604,3.0,2.5,3.0,stcules,'Foreign / Export Stout',3.0,3.0,'Black Horse Black Beer',6.5,48215
+10325,'Vecchio Birraio',1234725145,3.0,3.0,3.5,stcules,'German Pilsener',2.5,3.0,'Sausa Pils',5.0,47969
+1075,'Caldera Brewing Company',1293735206,4.0,4.5,4.0,johnmichaelsen,'American Double / Imperial IPA',4.0,4.5,'Cauldron DIPA',7.7,64883
+1075,'Caldera Brewing Company',1325524659,3.0,3.5,3.5,oline73,'Herbed / Spiced Beer',3.0,3.5,'Caldera Ginger Beer',4.7,52159
+1075,'Caldera Brewing Company',1318991115,3.5,3.5,3.5,Reidrover,'Herbed / Spiced Beer',4.0,4.0,'Caldera Ginger Beer',4.7,52159
+1075,'Caldera Brewing Company',1306276018,3.0,2.5,3.5,alpinebryant,'Herbed / Spiced Beer',2.0,3.5,'Caldera Ginger Beer',4.7,52159
+1075,'Caldera Brewing Company',1290454503,4.0,3.0,3.5,LordAdmNelson,'Herbed / Spiced Beer',3.5,4.0,'Caldera Ginger Beer',4.7,52159
+1075,'Caldera Brewing Company',1285632924,4.5,3.5,5.0,augustgarage,'Herbed / Spiced Beer',4.0,4.0,'Caldera Ginger Beer',4.7,52159
+163,'Amstel Brouwerij B. V.',1010963392,3.0,2.0,3.0,fodeeoz,'Light Lager',2.5,2.5,'Amstel Light',3.5,436
+1075,'Caldera Brewing Company',1283154365,5.0,5.0,4.0,MadeInOregon,'Herbed / Spiced Beer',4.0,4.0,'Caldera Ginger Beer',4.7,52159
+1075,'Caldera Brewing Company',1277557990,4.0,4.0,4.0,rawthar,'Herbed / Spiced Beer',3.5,4.0,'Caldera Ginger Beer',4.7,52159
+1075,'Caldera Brewing Company',1275779250,4.0,4.5,3.0,Halcyondays,'Herbed / Spiced Beer',2.5,3.0,'Caldera Ginger Beer',4.7,52159
+1075,'Caldera Brewing Company',1273109020,3.5,4.0,3.0,RangerClegg,'Herbed / Spiced Beer',3.0,4.0,'Caldera Ginger Beer',4.7,52159
+1075,'Caldera Brewing Company',1316025612,3.0,3.0,2.5,Beerandraiderfan,'Oatmeal Stout',3.0,3.0,'Caldera Oatmeal Stout',7.2,10789
+1075,'Caldera Brewing Company',1103502339,2.0,1.5,2.5,RedDiamond,'Oatmeal Stout',2.5,2.0,'Caldera Oatmeal Stout',7.2,10789
+1075,'Caldera Brewing Company',1062311123,4.0,3.0,4.0,beerguy101,'American Pale Lager',4.0,4.0,'Caldera OBF 15',5.6,12386
+163,'Amstel Brouwerij B. V.',1010861086,2.5,3.0,3.0,jdhilt,'Light Lager',2.0,2.0,'Amstel Light',3.5,436
+1075,'Caldera Brewing Company',1325478004,4.5,4.5,3.0,UCLABrewN84,Rauchbier,4.0,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1325360812,4.0,4.0,4.0,zaphodchak,Rauchbier,3.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1322506304,4.0,4.5,4.0,Tilley4,Rauchbier,3.5,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1320494397,4.5,5.0,4.5,mikedrinksbeer2,Rauchbier,4.0,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1320140421,4.0,4.5,4.0,dbmernin83,Rauchbier,4.0,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1319847514,4.5,4.5,4.0,titosupertramp,Rauchbier,4.0,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1318802642,5.0,5.0,3.5,optimator13,Rauchbier,3.5,5.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1318290101,4.5,4.5,4.0,Blakaeris,Rauchbier,4.0,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1318289482,4.5,5.0,4.0,bashiba,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1316405909,4.5,4.5,3.5,Klym,Rauchbier,4.0,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1315696563,4.5,4.5,4.0,flexabull,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+163,'Amstel Brouwerij B. V.',1002109880,3.0,2.0,2.0,xXTequila,'Light Lager',2.0,3.0,'Amstel Light',3.5,436
+1075,'Caldera Brewing Company',1315014054,5.0,4.5,4.0,Bung,Rauchbier,4.0,5.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1314752229,4.0,4.0,4.5,oberon,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1312403394,4.5,4.5,4.0,t420o,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1312162337,4.0,4.0,4.0,DarthKostrizer,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1312070406,4.0,4.0,3.0,MrVonzipper,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1311558510,3.0,4.5,3.0,Beerandraiderfan,Rauchbier,2.0,3.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1309310508,4.0,4.5,4.5,TheWhiskerReview,Rauchbier,4.0,3.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1307850875,3.5,3.5,4.5,Elimination,Rauchbier,4.0,3.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1283136243,4.5,5.0,3.5,Jason,Rauchbier,4.5,4.5,'Rauch Ür Bock',7.4,58046
+163,'Amstel Brouwerij B. V.',988202869,3.0,3.0,3.0,Brent,'Light Lager',2.0,2.0,'Amstel Light',3.5,436
+1075,'Caldera Brewing Company',1306128988,4.5,4.0,4.0,DoubleJ,Rauchbier,4.5,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1305926255,5.0,4.5,3.5,Deuane,Rauchbier,4.0,5.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1305856857,4.0,4.0,4.0,Mattybeerguy,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1305469906,4.0,4.0,3.5,micromaniac129,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1305329412,3.5,5.0,3.5,beagle75,Rauchbier,3.5,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1302401846,4.0,4.0,3.5,northyorksammy,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1301454480,4.5,4.0,4.0,vette2006c5r,Rauchbier,4.5,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1301023832,4.0,3.5,4.0,EvanEngelstad,Rauchbier,3.0,3.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1300936020,4.5,4.0,4.0,djeucalyptus,Rauchbier,4.0,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1300237348,4.0,4.0,3.5,ccrida,Rauchbier,4.5,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1297290394,3.5,3.5,4.0,cooch69,Rauchbier,3.5,3.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1291959798,3.5,4.0,4.0,DogFood11,Rauchbier,3.5,3.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1291254447,4.0,4.5,4.0,brewandbbq,Rauchbier,4.0,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1286839186,3.5,3.5,4.0,Fatehunter,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1286679032,4.5,4.5,3.0,hopsbreath,Rauchbier,4.5,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1285545349,4.5,4.5,3.5,augustgarage,Rauchbier,4.0,5.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1284135689,4.5,4.5,4.0,Slatetank,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1281495119,4.0,4.0,4.0,Proteus93,Rauchbier,4.0,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1281303716,4.0,4.5,4.0,SShelly,Rauchbier,4.0,4.5,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1277846123,4.0,4.5,4.0,zoso1967,Rauchbier,3.5,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1275779614,4.0,4.5,3.5,Halcyondays,Rauchbier,3.5,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1273021280,4.0,4.5,3.5,msubulldog25,Rauchbier,4.5,4.0,'Rauch Ür Bock',7.4,58046
+1075,'Caldera Brewing Company',1251327677,4.0,3.5,3.5,NJpadreFan,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1250928902,2.5,3.0,3.5,vacax,'American Pale Ale (APA)',3.5,2.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1249866208,4.0,3.5,4.0,d0ggnate,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1310259440,4.5,4.5,4.5,Cyberkedi,'American Porter',4.5,5.0,'Pilot Rock Porter',5.8,10788
+1075,'Caldera Brewing Company',1249847121,4.5,3.5,4.0,babyhobbes,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1249556277,4.5,3.5,4.0,mdagnew,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1249347819,4.0,3.5,4.5,mikesgroove,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1248223105,4.0,3.5,4.0,hdofu,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1248142715,3.5,4.0,3.5,argock,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1247611689,3.5,4.0,4.0,Seanibus,'American Pale Ale (APA)',3.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1246913078,5.0,4.0,4.5,GratefulBeerGuy,'American Pale Ale (APA)',4.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1208019450,3.5,4.0,3.5,MuenchenerKindl,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1246835039,4.5,4.0,4.0,PDXHops,'American Pale Ale (APA)',4.5,4.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1245632401,4.0,4.0,4.0,IMincedTheKing,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1245007399,4.0,3.5,4.0,Goliath,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1243386855,4.0,3.5,3.5,zeff80,'American Pale Ale (APA)',4.0,4.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1243111472,4.0,3.5,4.0,akorsak,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1242695740,4.0,3.0,3.5,wchesak,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1242591041,3.5,3.5,3.5,beer2day,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1240194272,4.0,3.5,2.5,bfields4,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1239404031,4.0,4.0,4.0,dyan,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1238806680,3.5,3.5,4.0,Monkeyknife,'American Pale Ale (APA)',3.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1238102425,4.5,4.0,4.0,HopDerek,'American Pale Ale (APA)',3.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1237995185,4.5,4.0,4.5,djeucalyptus,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1235940573,5.0,3.5,4.0,mtrentm,'American Pale Ale (APA)',4.0,5.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1235869779,5.0,4.0,4.5,maximum12,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1235799776,3.5,4.0,3.5,blackie,'American Pale Ale (APA)',3.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1234402493,4.0,3.5,3.5,JayQue,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1234301164,4.5,3.5,3.5,bbothen,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1234289072,4.0,4.0,4.0,Kegatron,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1233532055,4.0,4.0,4.0,CrellMoset,'American Pale Ale (APA)',4.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1233527792,3.5,3.0,3.5,beerman21,'American Pale Ale (APA)',3.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1276458339,4.0,4.0,4.0,joepais,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1233438861,4.0,4.0,4.0,BeerSox,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1232762866,3.5,4.0,3.5,Proteus93,'American Pale Ale (APA)',3.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1231859071,3.5,3.5,3.5,hopdog,'American Pale Ale (APA)',3.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1231644832,4.0,3.5,3.5,gford217,'American Pale Ale (APA)',3.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1228286719,4.0,3.0,4.0,thehand,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1227368772,4.5,4.0,4.0,GbVDave,'American Pale Ale (APA)',4.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1222211380,3.0,3.0,3.5,dfitch81,'American Pale Ale (APA)',3.0,2.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1220215328,3.5,3.5,4.0,RJLarse,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1275798498,4.0,4.0,4.0,Beejay,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1219023488,4.5,4.5,4.5,SurlyDuff,'American Pale Ale (APA)',4.5,4.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1218509484,4.0,4.0,4.0,Wetpaperbag,'American Pale Ale (APA)',3.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1217377327,4.5,4.0,4.0,largadeer,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1216870136,3.5,4.5,4.0,cswhitehorse,'American Pale Ale (APA)',3.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1216764325,4.0,4.0,3.5,elniko,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1215737527,4.5,4.0,4.0,deltatauhobbit,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1215478984,4.0,4.0,4.5,woemad,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1215388875,4.5,4.0,3.5,czechsaaz,'American Pale Ale (APA)',4.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1210468644,4.0,4.0,4.5,Wasatch,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1208444405,4.5,4.0,3.5,oberon,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1310518783,4.0,4.0,4.5,Urbancaver,'Belgian Strong Dark Ale',4.0,3.5,'Vas Deferens Ale',8.1,58920
+1075,'Caldera Brewing Company',1207375871,3.5,4.0,5.0,ccrida,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1206403506,4.5,3.5,3.0,brentk56,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1206326545,5.0,4.0,3.5,BeerZack,'American Pale Ale (APA)',4.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1205302160,4.0,3.5,3.5,russpowell,'American Pale Ale (APA)',3.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1204256003,4.0,3.5,4.0,Spikester,'American Pale Ale (APA)',3.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1199158664,3.0,2.5,3.0,Dubbercody,'American Pale Ale (APA)',3.0,3.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1198817492,3.0,4.0,3.5,ChainGangGuy,'American Pale Ale (APA)',3.5,3.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1190043490,4.5,4.0,4.5,Vancer,'American Pale Ale (APA)',4.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1188970905,4.5,3.5,3.5,ghostwalker,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1186867975,4.0,4.0,4.5,udubdawg,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1275439462,4.0,3.5,2.5,Bfarr,'American Pale Ale (APA)',3.0,4.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1182308568,4.0,4.0,4.0,cburian,'American Pale Ale (APA)',4.0,4.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1181450867,4.5,4.0,4.0,flexabull,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1177638920,4.0,3.0,3.5,mnwags,'American Pale Ale (APA)',2.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1170714306,4.5,4.0,3.5,NeroFiddled,'American Pale Ale (APA)',4.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1160699043,5.0,4.0,3.5,IntriqKen,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1160265839,3.5,4.0,3.0,JoshD,'American Pale Ale (APA)',3.5,3.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1157665307,4.0,3.5,4.0,lackenhauser,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1154568582,4.5,4.0,4.0,kgotcher,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1154067787,4.5,4.0,3.0,MLegendre,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1148947298,3.0,4.0,4.0,freed,'American Pale Ale (APA)',3.0,3.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1147643598,4.0,4.0,3.5,ddarden,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1147583357,4.0,4.0,3.5,ElGordo,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1132082651,4.5,4.5,4.5,BuckeyeNation,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1124731747,4.0,3.5,4.0,Reidrover,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1326212716,4.0,4.0,4.0,BeerLover99,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1322517349,3.5,4.0,3.5,syrupjoe,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1321322911,4.0,4.5,4.0,BrewerB,'American Pale Ale (APA)',4.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1274928281,4.0,4.0,3.5,robwestcott,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1320470970,3.5,3.5,4.5,vande,'American Pale Ale (APA)',4.0,3.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1320422191,4.0,3.5,4.0,ColForbinBC,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1318247779,3.0,2.5,3.5,harrymel,'American Pale Ale (APA)',3.5,3.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1316727048,4.0,3.5,4.5,woosterbill,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1315501843,4.0,4.0,4.5,ReelBigwigFish,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1315424611,4.0,4.0,4.0,cbarrett4,'American Pale Ale (APA)',4.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1313814599,4.0,3.5,4.0,chodinheaven,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1313539369,3.5,3.5,3.5,Beerandraiderfan,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1313538701,4.0,3.5,4.5,MrVonzipper,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1274919895,4.0,4.0,4.0,tempest,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1313344297,3.5,3.5,3.5,witster18,'American Pale Ale (APA)',3.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1313205214,4.0,3.5,3.5,jeff1973,'American Pale Ale (APA)',4.5,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1312859109,4.0,4.0,4.0,Duff27,'American Pale Ale (APA)',3.5,4.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1311635079,3.0,3.0,4.0,Phelps,'American Pale Ale (APA)',4.0,3.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1310596490,3.5,3.5,4.0,mgbickel,'American Pale Ale (APA)',3.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1309143059,3.0,3.5,4.0,Jimmys,'American Pale Ale (APA)',3.5,2.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1307926374,4.0,4.0,4.0,Scotchboy,'American Pale Ale (APA)',3.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1307228809,3.0,3.5,4.0,TheGordianKnot,'American Pale Ale (APA)',3.0,3.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1306801312,3.5,3.5,3.5,loren01,'American Pale Ale (APA)',4.0,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1305443533,3.5,3.5,3.5,rootbeerman,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1304919405,4.0,4.0,4.5,corby112,'American Pale Ale (APA)',4.0,4.0,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1304775252,3.5,3.5,4.0,inlimbo77,'American Pale Ale (APA)',3.5,3.5,'Caldera Pale Ale',5.5,25414
+1075,'Caldera Brewing Company',1302318720,4.5,5.0,4.5,youradhere,'American Pale Ale (APA)',4.5,4.0,'Caldera Pale Ale',5.5,25414

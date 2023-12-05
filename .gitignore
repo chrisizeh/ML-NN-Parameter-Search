@@ -1,3 +1,9 @@
+.DS_Store
+
+# Beer Reviews is too big - adding small to test
+beer_reviews.arff
+dataset.arff
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
