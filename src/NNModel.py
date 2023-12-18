@@ -31,20 +31,19 @@ class NNModel:
         self.target = target
 
         self.device = device
-        self.create_model()
+        self.create_model(layer)
 
-    def create_model(self):
+
+    def create_model(self, layer):
         self.model = NeuralNetwork().to(self.device)
 
-        self.model.linear_relu_stack = nn.Sequential(
-            nn.Linear(self.features, 250),
-            nn.ReLU(),
-            nn.Linear(250, 164),
-            nn.ReLU(),
-            nn.Linear(164, 164),
-            nn.ReLU(),
-            nn.Linear(164, self.target)
-        )
+        layer_nn = []
+        for i in range(len(layer) - 1):
+            layer_nn.append(nn.Linear(layer[i], layer[i+1]))
+            layer_nn.append(nn.ReLU())
+
+        self.model.linear_relu_stack = nn.Sequential(*layer_nn)
+
 
     def train(self, dataloader, loss_fn, optimizer):
         size = len(dataloader.dataset)
@@ -64,6 +63,7 @@ class NNModel:
             if batch % 100 == 0:
                 loss, current = loss.item(), (batch + 1) * len(XX)
 
+
     def test(self, dataloader, loss_fn):
         size = len(dataloader.dataset)
         num_batches = len(dataloader)
@@ -79,11 +79,13 @@ class NNModel:
         correct /= size
         return (100*correct)
     
+
     def run(self, train_dataloader, test_dataloader, epochs):
         for t in range(epochs):
             self.train(train_dataloader, self.loss_fn, self.optimizer)
             acc = self.test(test_dataloader, self.loss_fn)
         return acc
+
 
     def grid_search(self, dict_param, train_ds, test_ds, epochs=2):
         best_param = {}
@@ -93,7 +95,7 @@ class NNModel:
                 train_dataloader = DataLoader(train_ds, batch_size=int(batch_size))
                 test_dataloader = DataLoader(test_ds, batch_size=int(batch_size))
         
-                self.create_model()
+                self.create_model(self.layer)
                 self.loss_fn = nn.CrossEntropyLoss()
                 self.optimizer = torch.optim.SGD(self.model.parameters(), lr=learning_rate)
 
@@ -102,7 +104,7 @@ class NNModel:
                     best_param["batch_size"] = batch_size
                     best_param["learning_rate"] = learning_rate
                     best_acc = acc
-                print(f"Batch Size: {batch_size:.0f}, Learning Rate: {learning_rate:>0.3f} \n Accuracy: {acc:>0.1f}\n")
+                print(f"Batch Size: {batch_size:.0f}, Learning Rate: {learning_rate:>0.5f} \n Accuracy: {acc:>0.1f}\n")
 
         return best_param, best_acc
 
@@ -126,8 +128,7 @@ class NNModel:
 
         for i in range(steps):
             print(f"Step {i}")
-            print(f"Best Params, Batch Size: {best_param['batch_size']:.0f}, Learning Rate: {best_param['learning_rate']:>0.3f}, Acc: {best_acc:>0.1f}")
-            print(best_param)
+            print(f"Best Params, Batch Size: {best_param['batch_size']:.0f}, Learning Rate: {best_param['learning_rate']:>0.5f}, Acc: {best_acc:>0.1f}")
             neighbor_params = self.neighbor_hood(best_param)
             params, acc = self.grid_search(neighbor_params, train_ds, test_ds, epochs=epochs)
 
