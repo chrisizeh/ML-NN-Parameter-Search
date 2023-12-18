@@ -25,25 +25,26 @@ class NeuralNetwork(nn.Module):
 
 class NNModel:
 
-    def __init__(self, layer, device, target, features):
+    def __init__(self, layer, device, features, target):
         self.layer = layer
+        self.features = features
+        self.target = target
+
         self.device = device
-        self.model = NeuralNetwork().to(device)
+        self.create_model()
+
+    def create_model(self):
+        self.model = NeuralNetwork().to(self.device)
 
         self.model.linear_relu_stack = nn.Sequential(
-            nn.Linear(features, 250),
+            nn.Linear(self.features, 250),
             nn.ReLU(),
             nn.Linear(250, 164),
             nn.ReLU(),
             nn.Linear(164, 164),
             nn.ReLU(),
-            nn.Linear(164, target)
+            nn.Linear(164, self.target)
         )
-
-    def reset_weights(self):
-        for layer in self.model.children():
-            if hasattr(layer, 'reset_parameters'):
-                layer.reset_parameters()
 
     def train(self, dataloader, loss_fn, optimizer):
         size = len(dataloader.dataset)
@@ -92,10 +93,10 @@ class NNModel:
                 train_dataloader = DataLoader(train_ds, batch_size=int(batch_size))
                 test_dataloader = DataLoader(test_ds, batch_size=int(batch_size))
         
+                self.create_model()
                 self.loss_fn = nn.CrossEntropyLoss()
                 self.optimizer = torch.optim.SGD(self.model.parameters(), lr=learning_rate)
 
-                self.reset_weights()
                 acc = self.run(train_dataloader, test_dataloader, epochs)
                 if(acc > best_acc):
                     best_param["batch_size"] = batch_size
@@ -109,7 +110,7 @@ class NNModel:
     def neighbor_hood(self, params):
         param_list = {}
         for param, val in params.items():
-            param_list[param] = [round(val * random.uniform(0.9, 0.99), 5), round(val * random.uniform(1.01, 1.1), 5)]
+            param_list[param] = [round(val * random.uniform(0.7, 0.9), 5), round(val * random.uniform(1.1, 1.3), 5)]
         return param_list
 
 
