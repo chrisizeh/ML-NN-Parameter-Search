@@ -1,0 +1,324 @@
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.activation.ReLU'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 11.3
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.activation.ReLU'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 10.3
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.activation.ReLU'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 9.9
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.activation.ReLU'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 10.4
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.linear.Identity'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 13.8
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.linear.Identity'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 13.0
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.linear.Identity'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 13.3
+
+Parameter Combination (0.001, 32, <class 'torch.nn.modules.linear.Identity'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 12.7
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.activation.ReLU'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 8.5
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.activation.ReLU'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.6
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.activation.ReLU'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.8
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.activation.ReLU'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.6
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.linear.Identity'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 11.1
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.linear.Identity'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 10.7
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.linear.Identity'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 10.9
+
+Parameter Combination (0.001, 64, <class 'torch.nn.modules.linear.Identity'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 11.0
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.activation.ReLU'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 5.2
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.activation.ReLU'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.activation.ReLU'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 4.4
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.activation.ReLU'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.linear.Identity'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 9.2
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.linear.Identity'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 9.4
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.linear.Identity'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 9.4
+
+Parameter Combination (0.001, 128, <class 'torch.nn.modules.linear.Identity'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 9.6
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.activation.ReLU'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 33.5
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.activation.ReLU'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 33.4
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.activation.ReLU'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 31.6
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.activation.ReLU'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 25.2
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.linear.Identity'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 52.0
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.linear.Identity'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 42.7
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.linear.Identity'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 48.6
+
+Parameter Combination (0.01, 32, <class 'torch.nn.modules.linear.Identity'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 41.5
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.activation.ReLU'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 21.7
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.activation.ReLU'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 25.9
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.activation.ReLU'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 23.5
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.activation.ReLU'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 18.0
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.linear.Identity'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 37.6
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.linear.Identity'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 35.3
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.linear.Identity'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 36.6
+
+Parameter Combination (0.01, 64, <class 'torch.nn.modules.linear.Identity'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 35.2
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.activation.ReLU'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 15.0
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.activation.ReLU'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 12.3
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.activation.ReLU'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 15.0
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.activation.ReLU'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 11.5
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.linear.Identity'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 25.3
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.linear.Identity'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 25.5
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.linear.Identity'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 24.9
+
+Parameter Combination (0.01, 128, <class 'torch.nn.modules.linear.Identity'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 25.4
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.activation.ReLU'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 48.7
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.activation.ReLU'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 46.9
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.activation.ReLU'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 48.8
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.activation.ReLU'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 31.7
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.activation.Sigmoid'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.linear.Identity'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 55.4
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.linear.Identity'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 46.7
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.linear.Identity'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 49.3
+
+Parameter Combination (0.05, 32, <class 'torch.nn.modules.linear.Identity'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 43.8
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.activation.ReLU'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 52.3
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.activation.ReLU'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 44.9
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.activation.ReLU'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 43.3
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.activation.ReLU'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 30.8
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.activation.Sigmoid'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.linear.Identity'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 55.1
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.linear.Identity'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 54.8
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.linear.Identity'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 53.5
+
+Parameter Combination (0.05, 64, <class 'torch.nn.modules.linear.Identity'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 44.5
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.activation.ReLU'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 33.9
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.activation.ReLU'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 35.0
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.activation.ReLU'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 33.3
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.activation.ReLU'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 25.3
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.activation.Sigmoid'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 7.4
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.linear.Identity'>, 0) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 40.5
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.linear.Identity'>, 0.2) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 41.3
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.linear.Identity'>, 0.3) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 39.3
+
+Parameter Combination (0.05, 128, <class 'torch.nn.modules.linear.Identity'>, 0.5) with keys ['learning_rate', 'batch_size', 'activation', 'dropout']
+ Accuracy: 38.5
+
