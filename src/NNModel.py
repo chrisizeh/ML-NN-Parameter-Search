@@ -27,10 +27,11 @@ class NeuralNetwork(nn.Module):
 
 class NNModel:
 
-    def __init__(self, layer, device, features, target):
+    def __init__(self, layer, device, acc_func, loss_func, reshape=False):
         self.layer = layer
-        self.features = features
-        self.target = target
+        self.acc_func = acc_func
+        self.loss_func = loss_func
+        self.reshape = reshape
 
         self.options = {"activation": [nn.ReLU, nn.Sigmoid, nn.Identity]}
         self.possible_keys = ["learning_rate", "batch_size", "layer", "activation", "dropout"]
@@ -59,6 +60,8 @@ class NNModel:
         self.model.train()
         for batch, (XX, yy) in enumerate(dataloader):
             XX, yy = XX.to(self.device), yy.to(self.device)
+            if (self.reshape):
+                yy = yy.reshape((yy.shape[0], 1))
 
             # Compute prediction error
             pred = self.model(XX)
@@ -81,9 +84,12 @@ class NNModel:
         with torch.no_grad():
             for XX, yy in dataloader:
                 XX, yy = XX.to(self.device), yy.to(self.device)
+                if (self.reshape):
+                    yy = yy.reshape((yy.shape[0], 1))
+
                 pred = self.model(XX)
                 test_loss += loss_fn(pred, yy).item()
-                correct += (pred.argmax(1) == yy).type(torch.float).sum().item()
+                correct += self.acc_func(pred, yy)
         test_loss /= num_batches
         correct /= size
         return (100*correct)
@@ -94,7 +100,7 @@ class NNModel:
         test_dataloader = DataLoader(test_ds, batch_size=params["batch_size"])
 
         self.create_model(params["layer"], params["activation"], params["dropout"])
-        self.loss_fn = nn.CrossEntropyLoss()
+        self.loss_fn = self.loss_func()
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr=params["learning_rate"])
         
         for t in range(epochs):
