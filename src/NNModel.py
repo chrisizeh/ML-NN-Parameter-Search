@@ -1,6 +1,8 @@
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
+from itertools import product
+
 import random
 
 
@@ -25,25 +27,32 @@ class NeuralNetwork(nn.Module):
 
 class NNModel:
 
-    def __init__(self, layer, device, target, features):
+    def __init__(self, layer, device, features, target):
         self.layer = layer
+        self.features = features
+        self.target = target
+
+        self.options = {"activation": [nn.ReLU, nn.Sigmoid, nn.Identity]}
+        self.possible_keys = ["learning_rate", "batch_size", "layer", "activation", "dropout"]
+        self.defaults = {"learning_rate": 0.01, "batch_size": 64, "layer": self.layer, "activation": nn.ReLU, "dropout": 0}
+
         self.device = device
-        self.model = NeuralNetwork().to(device)
+        self.create_model(layer)
 
-        self.model.linear_relu_stack = nn.Sequential(
-            nn.Linear(features, 250),
-            nn.ReLU(),
-            nn.Linear(250, 164),
-            nn.ReLU(),
-            nn.Linear(164, 164),
-            nn.ReLU(),
-            nn.Linear(164, target)
-        )
 
-    def reset_weights(self):
-        for layer in self.model.children():
-            if hasattr(layer, 'reset_parameters'):
-                layer.reset_parameters()
+    def create_model(self, layer, activation=nn.ReLU, dropout=0):
+        self.model = NeuralNetwork().to(self.device)
+
+        layer_nn = []
+        for i in range(len(layer) - 1):
+            layer_nn.append(nn.Linear(layer[i], layer[i+1]))
+            layer_nn.append(activation())
+
+            if(dropout > 0):
+                layer_nn.append(nn.Dropout(dropout))
+
+        self.model.linear_relu_stack = nn.Sequential(*layer_nn)
+
 
     def train(self, dataloader, loss_fn, optimizer):
         size = len(dataloader.dataset)
@@ -63,6 +72,7 @@ class NNModel:
             if batch % 100 == 0:
                 loss, current = loss.item(), (batch + 1) * len(XX)
 
+
     def test(self, dataloader, loss_fn):
         size = len(dataloader.dataset)
         num_batches = len(dataloader)
@@ -78,61 +88,83 @@ class NNModel:
         correct /= size
         return (100*correct)
     
-    def run(self, train_dataloader, test_dataloader, epochs):
+
+    def run(self, params, train_ds, test_ds, epochs):
+        train_dataloader = DataLoader(train_ds, batch_size=params["batch_size"])
+        test_dataloader = DataLoader(test_ds, batch_size=params["batch_size"])
+
+        self.create_model(params["layer"], params["activation"], params["dropout"])
+        self.loss_fn = nn.CrossEntropyLoss()
+        self.optimizer = torch.optim.SGD(self.model.parameters(), lr=params["learning_rate"])
+        
         for t in range(epochs):
             self.train(train_dataloader, self.loss_fn, self.optimizer)
             acc = self.test(test_dataloader, self.loss_fn)
         return acc
+    
+
+    def get_all_params(self, test_params, keys):
+        params = {}
+        for key in self.possible_keys:
+            if(key in keys):
+                params[key] = test_params[keys.index(key)]
+            else:
+                params[key] = self.defaults[key]
+        return params
+
 
     def grid_search(self, dict_param, train_ds, test_ds, epochs=2):
         best_param = {}
         best_acc = -1
-        for batch_size in dict_param["batch_size"]:
-            for learning_rate in dict_param["learning_rate"]:
-                train_dataloader = DataLoader(train_ds, batch_size=int(batch_size))
-                test_dataloader = DataLoader(test_ds, batch_size=int(batch_size))
-        
-                self.loss_fn = nn.CrossEntropyLoss()
-                self.optimizer = torch.optim.SGD(self.model.parameters(), lr=learning_rate)
 
-                self.reset_weights()
-                acc = self.run(train_dataloader, test_dataloader, epochs)
-                if(acc > best_acc):
-                    best_param["batch_size"] = batch_size
-                    best_param["learning_rate"] = learning_rate
-                    best_acc = acc
-                print(f"Batch Size: {batch_size:.0f}, Learning Rate: {learning_rate:>0.3f} \n Accuracy: {acc:>0.1f}\n")
+        iter_params = product(*dict_param.values())
+        keys = list(dict_param.keys())
+        for param_comb in iter_params:
+            params = self.get_all_params(param_comb, keys)
+            acc = self.run(params, train_ds, test_ds, epochs)
+            if(acc > best_acc):
+                best_param = param_comb
+                best_acc = acc
+            print(f"Parameter Combination {str(param_comb)} with keys {str(keys)}\n Accuracy: {acc:>0.1f}\n")
 
         return best_param, best_acc
 
 
-    def neighbor_hood(self, params):
+    def neighborhood(self, params, keys):
         param_list = {}
-        for param, val in params.items():
-            param_list[param] = [round(val * random.uniform(0.9, 0.99), 5), round(val * random.uniform(1.01, 1.1), 5)]
+        for i, val in enumerate(params):
+            if(type(val) == float):
+                param_list[keys[i]] = [round(val * random.uniform(0.7, 0.9), 5), round(val * random.uniform(1.1, 1.3), 5)]
+            elif(type(val) == int):
+                param_list[keys[i]] = [int(val * random.uniform(0.7, 0.9)), int(val * random.uniform(1.1, 1.3))]
+            elif(type(val) == list):
+                param_list[keys[i]] = [[val[0]], [val[0]]]
+                for j in range(1, len(val)-1):
+                    param_list[keys[i]][0].append(int(val[j] * random.uniform(0.7, 0.9)))
+                    param_list[keys[i]][1].append(int(val[j] * random.uniform(1.1, 1.3)))
+
+                param_list[keys[i]][0].append(val[-1])
+                param_list[keys[i]][1].append(val[-1])
+            elif(callable(val)):
+                param_list[keys[i]] = self.options[keys[i]]
         return param_list
 
 
     def local_search(self, init_param, train_ds, test_ds, epochs=2, steps=50): 
-        train_dataloader = DataLoader(train_ds, batch_size=init_param["batch_size"])
-        test_dataloader = DataLoader(test_ds, batch_size=init_param["batch_size"])
-
-        self.loss_fn = nn.CrossEntropyLoss()
-        self.optimizer = torch.optim.SGD(self.model.parameters(), lr=init_param["learning_rate"])
-
-        best_acc = self.run(train_dataloader, test_dataloader, epochs)
-        best_param = init_param
+        keys = list(init_param.keys())
+        params = self.get_all_params(list(init_param.values()), keys)
+        best_acc = self.run(params, train_ds, test_ds, epochs)
+        
+        best_param = list(init_param.values())
 
         for i in range(steps):
             print(f"Step {i}")
-            print(f"Best Params, Batch Size: {best_param['batch_size']:.0f}, Learning Rate: {best_param['learning_rate']:>0.3f}, Acc: {best_acc:>0.1f}")
-            print(best_param)
-            neighbor_params = self.neighbor_hood(best_param)
+            print(f"Best Params, Parameter Combination {str(best_param)} with keys {str(keys)}\n Accuracy: {best_acc:>0.1f}\n")
+            neighbor_params = self.neighborhood(best_param, keys)
             params, acc = self.grid_search(neighbor_params, train_ds, test_ds, epochs=epochs)
 
             if(acc > best_acc):
                 best_acc = acc
                 best_param = params
-                best_param["batch_size"] = int(best_param["batch_size"])
 
         return best_param
