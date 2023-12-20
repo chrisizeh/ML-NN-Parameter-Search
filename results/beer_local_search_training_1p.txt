@@ -1,0 +1,1594 @@
+Step 0
+Best Params, Parameter Combination [0.01, 64] with keys ['learning_rate', 'batch_size']
+ Accuracy: 7.8
+
+Parameter Combination (0.00806, 56) with keys ['learning_rate', 'batch_size']
+ Accuracy: 8.8
+
+Parameter Combination (0.00806, 75) with keys ['learning_rate', 'batch_size']
+ Accuracy: 6.9
+
+Parameter Combination (0.01155, 56) with keys ['learning_rate', 'batch_size']
+ Accuracy: 11.8
+
+Parameter Combination (0.01155, 75) with keys ['learning_rate', 'batch_size']
+ Accuracy: 7.6
+
+Grid search took 1.1 minutes.
+Step 1
+Best Params, Parameter Combination (0.01155, 56) with keys ['learning_rate', 'batch_size']
+ Accuracy: 11.8
+
+Parameter Combination (0.00847, 40) with keys ['learning_rate', 'batch_size']
+ Accuracy: 11.7
+
+Parameter Combination (0.00847, 67) with keys ['learning_rate', 'batch_size']
+ Accuracy: 5.5
+
+Parameter Combination (0.01491, 40) with keys ['learning_rate', 'batch_size']
+ Accuracy: 11.7
+
+Parameter Combination (0.01491, 67) with keys ['learning_rate', 'batch_size']
+ Accuracy: 12.4
+
+Grid search took 1.3 minutes.
+Step 2
+Best Params, Parameter Combination (0.01491, 67) with keys ['learning_rate', 'batch_size']
+ Accuracy: 12.4
+
+Parameter Combination (0.01109, 54) with keys ['learning_rate', 'batch_size']
+ Accuracy: 12.2
+
+Parameter Combination (0.01109, 81) with keys ['learning_rate', 'batch_size']
+ Accuracy: 10.5
+
+Parameter Combination (0.01848, 54) with keys ['learning_rate', 'batch_size']
+ Accuracy: 15.5
+
+Parameter Combination (0.01848, 81) with keys ['learning_rate', 'batch_size']
+ Accuracy: 8.9
+
+Grid search took 1.0 minutes.
+Step 3
+Best Params, Parameter Combination (0.01848, 54) with keys ['learning_rate', 'batch_size']
+ Accuracy: 15.5
+
+Parameter Combination (0.01378, 39) with keys ['learning_rate', 'batch_size']
+ Accuracy: 17.4
+
+Parameter Combination (0.01378, 61) with keys ['learning_rate', 'batch_size']
+ Accuracy: 11.4
+
+Parameter Combination (0.02131, 39) with keys ['learning_rate', 'batch_size']
+ Accuracy: 18.1
+
+Parameter Combination (0.02131, 61) with keys ['learning_rate', 'batch_size']
+ Accuracy: 9.0
+
+Grid search took 1.1 minutes.
+Step 4
+Best Params, Parameter Combination (0.02131, 39) with keys ['learning_rate', 'batch_size']
+ Accuracy: 18.1
+
+Parameter Combination (0.01642, 35) with keys ['learning_rate', 'batch_size']
+ Accuracy: 16.1
+
+Parameter Combination (0.01642, 45) with keys ['learning_rate', 'batch_size']
+ Accuracy: 16.6
+
+Parameter Combination (0.02726, 35) with keys ['learning_rate', 'batch_size']
+ Accuracy: 27.5
+
+Parameter Combination (0.02726, 45) with keys ['learning_rate', 'batch_size']
+ Accuracy: 16.2
+
+Grid search took 1.4 minutes.
+Step 5
+Best Params, Parameter Combination (0.02726, 35) with keys ['learning_rate', 'batch_size']
+ Accuracy: 27.5
+
+Parameter Combination (0.0195, 28) with keys ['learning_rate', 'batch_size']
+ Accuracy: 17.5
+
+Parameter Combination (0.0195, 38) with keys ['learning_rate', 'batch_size']
+ Accuracy: 10.2
+
+Parameter Combination (0.03035, 28) with keys ['learning_rate', 'batch_size']
+ Accuracy: 27.3
+
+Parameter Combination (0.03035, 38) with keys ['learning_rate', 'batch_size']
+ Accuracy: 28.4
+
+Grid search took 1.9 minutes.
+Step 6
+Best Params, Parameter Combination (0.03035, 38) with keys ['learning_rate', 'batch_size']
+ Accuracy: 28.4
+
+Parameter Combination (0.02645, 30) with keys ['learning_rate', 'batch_size']
+ Accuracy: 18.8
+
+Parameter Combination (0.02645, 48) with keys ['learning_rate', 'batch_size']
+ Accuracy: 19.1
+
+Parameter Combination (0.0361, 30) with keys ['learning_rate', 'batch_size']
+ Accuracy: 29.5
+
+Parameter Combination (0.0361, 48) with keys ['learning_rate', 'batch_size']
+ Accuracy: 23.9
+
+Grid search took 1.6 minutes.
+Step 7
+Best Params, Parameter Combination (0.0361, 30) with keys ['learning_rate', 'batch_size']
+ Accuracy: 29.5
+
+Parameter Combination (0.0294, 25) with keys ['learning_rate', 'batch_size']
+ Accuracy: 29.3
+
+Parameter Combination (0.0294, 35) with keys ['learning_rate', 'batch_size']
+ Accuracy: 27.3
+
+Parameter Combination (0.04011, 25) with keys ['learning_rate', 'batch_size']
+ Accuracy: 31.0
+
+Parameter Combination (0.04011, 35) with keys ['learning_rate', 'batch_size']
+ Accuracy: 25.9
+
+Grid search took 1.7 minutes.
+Step 8
+Best Params, Parameter Combination (0.04011, 25) with keys ['learning_rate', 'batch_size']
+ Accuracy: 31.0
+
+Parameter Combination (0.03364, 17) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.0
+
+Parameter Combination (0.03364, 30) with keys ['learning_rate', 'batch_size']
+ Accuracy: 26.6
+
+Parameter Combination (0.04724, 17) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.0
+
+Parameter Combination (0.04724, 30) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.0
+
+Grid search took 2.2 minutes.
+Step 9
+Best Params, Parameter Combination (0.04724, 17) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.0
+
+Parameter Combination (0.04211, 12) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.1
+
+Parameter Combination (0.04211, 21) with keys ['learning_rate', 'batch_size']
+ Accuracy: 22.3
+
+Parameter Combination (0.05898, 12) with keys ['learning_rate', 'batch_size']
+ Accuracy: 32.4
+
+Parameter Combination (0.05898, 21) with keys ['learning_rate', 'batch_size']
+ Accuracy: 27.0
+
+Grid search took 3.1 minutes.
+Step 10
+Best Params, Parameter Combination (0.04724, 17) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.0
+
+Parameter Combination (0.03561, 13) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.7
+
+Parameter Combination (0.03561, 19) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.6
+
+Parameter Combination (0.06004, 13) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.6
+
+Parameter Combination (0.06004, 19) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.0
+
+Grid search took 3.1 minutes.
+Step 11
+Best Params, Parameter Combination (0.06004, 13) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.6
+
+Parameter Combination (0.05203, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.2
+
+Parameter Combination (0.05203, 15) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.3
+
+Parameter Combination (0.07332, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.4
+
+Parameter Combination (0.07332, 15) with keys ['learning_rate', 'batch_size']
+ Accuracy: 12.8
+
+Grid search took 4.0 minutes.
+Step 12
+Best Params, Parameter Combination (0.06004, 13) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.6
+
+Parameter Combination (0.04758, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.7
+
+Parameter Combination (0.04758, 15) with keys ['learning_rate', 'batch_size']
+ Accuracy: 26.6
+
+Parameter Combination (0.07162, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 33.6
+
+Parameter Combination (0.07162, 15) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.7
+
+Grid search took 3.7 minutes.
+Step 13
+Best Params, Parameter Combination (0.04758, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.7
+
+Parameter Combination (0.03825, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.5
+
+Parameter Combination (0.03825, 12) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.2
+
+Parameter Combination (0.05585, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.4
+
+Parameter Combination (0.05585, 12) with keys ['learning_rate', 'batch_size']
+ Accuracy: 28.6
+
+Grid search took 5.1 minutes.
+Step 14
+Best Params, Parameter Combination (0.05585, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.4
+
+Parameter Combination (0.04506, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.6
+
+Parameter Combination (0.04506, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.7
+
+Parameter Combination (0.06421, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.7
+
+Parameter Combination (0.06421, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.7
+
+Grid search took 7.5 minutes.
+Step 15
+Best Params, Parameter Combination (0.05585, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.4
+
+Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.04262, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.4
+
+Parameter Combination (0.06985, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.0
+
+Parameter Combination (0.06985, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.9
+
+Grid search took 6.7 minutes.
+Step 16
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03155, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 30.1
+
+Parameter Combination (0.03155, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.1
+
+Parameter Combination (0.05331, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.4
+
+Parameter Combination (0.05331, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.6
+
+Grid search took 10.2 minutes.
+Step 17
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03244, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.8
+
+Parameter Combination (0.03244, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.6
+
+Parameter Combination (0.055, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.3
+
+Parameter Combination (0.055, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 28.8
+
+Grid search took 9.9 minutes.
+Step 18
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03367, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.5
+
+Parameter Combination (0.03367, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.7
+
+Parameter Combination (0.05109, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.6
+
+Parameter Combination (0.05109, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.9
+
+Grid search took 10.2 minutes.
+Step 19
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03202, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.5
+
+Parameter Combination (0.03202, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.0
+
+Parameter Combination (0.0471, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.5
+
+Parameter Combination (0.0471, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.4
+
+Grid search took 7.8 minutes.
+Step 20
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03707, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.0
+
+Parameter Combination (0.03707, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 33.2
+
+Parameter Combination (0.05166, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 30.6
+
+Parameter Combination (0.05166, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.3
+
+Grid search took 8.4 minutes.
+Step 21
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.0363, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 32.9
+
+Parameter Combination (0.0363, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.6
+
+Parameter Combination (0.05354, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.8
+
+Parameter Combination (0.05354, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.6
+
+Grid search took 10.2 minutes.
+Step 22
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03265, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 29.3
+
+Parameter Combination (0.03265, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 47.2
+
+Parameter Combination (0.05024, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.2
+
+Parameter Combination (0.05024, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.6
+
+Grid search took 9.2 minutes.
+Step 23
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03587, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.3
+
+Parameter Combination (0.03587, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.9
+
+Parameter Combination (0.0487, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.1
+
+Parameter Combination (0.0487, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 30.1
+
+Grid search took 7.9 minutes.
+Step 24
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.0333, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.6
+
+Parameter Combination (0.0333, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 33.9
+
+Parameter Combination (0.05349, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.7
+
+Parameter Combination (0.05349, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.5
+
+Grid search took 9.1 minutes.
+Step 25
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03106, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.5
+
+Parameter Combination (0.03106, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.7
+
+Parameter Combination (0.04928, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.6
+
+Parameter Combination (0.04928, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.8
+
+Grid search took 8.3 minutes.
+Step 26
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03145, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.4
+
+Parameter Combination (0.03145, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 47.8
+
+Parameter Combination (0.05108, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.0
+
+Parameter Combination (0.05108, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.9
+
+Grid search took 7.1 minutes.
+Step 27
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03346, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.5
+
+Parameter Combination (0.03346, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.3
+
+Parameter Combination (0.04824, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.9
+
+Parameter Combination (0.04824, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.0
+
+Grid search took 8.4 minutes.
+Step 28
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03697, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.2
+
+Parameter Combination (0.03697, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.5
+
+Parameter Combination (0.05294, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.8
+
+Parameter Combination (0.05294, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.3
+
+Grid search took 7.0 minutes.
+Step 29
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03724, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.7
+
+Parameter Combination (0.03724, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.8
+
+Parameter Combination (0.05071, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.1
+
+Parameter Combination (0.05071, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.2
+
+Grid search took 10.0 minutes.
+Step 30
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03734, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.1
+
+Parameter Combination (0.03734, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.4
+
+Parameter Combination (0.04972, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 33.9
+
+Parameter Combination (0.04972, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.1
+
+Grid search took 9.9 minutes.
+Step 31
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03379, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.9
+
+Parameter Combination (0.03379, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.1
+
+Parameter Combination (0.05285, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.9
+
+Parameter Combination (0.05285, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.8
+
+Grid search took 7.9 minutes.
+Step 32
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03234, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 32.7
+
+Parameter Combination (0.03234, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.7
+
+Parameter Combination (0.04841, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.7
+
+Parameter Combination (0.04841, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.3
+
+Grid search took 9.1 minutes.
+Step 33
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.035, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.9
+
+Parameter Combination (0.035, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.4
+
+Parameter Combination (0.04936, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.3
+
+Parameter Combination (0.04936, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.6
+
+Grid search took 8.2 minutes.
+Step 34
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03229, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.2
+
+Parameter Combination (0.03229, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.9
+
+Parameter Combination (0.05401, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 31.2
+
+Parameter Combination (0.05401, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.5
+
+Grid search took 6.9 minutes.
+Step 35
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03654, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.6
+
+Parameter Combination (0.03654, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 28.3
+
+Parameter Combination (0.04769, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.0
+
+Parameter Combination (0.04769, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.8
+
+Grid search took 8.1 minutes.
+Step 36
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03764, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.4
+
+Parameter Combination (0.03764, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.9
+
+Parameter Combination (0.05281, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.4
+
+Parameter Combination (0.05281, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.0
+
+Grid search took 8.4 minutes.
+Step 37
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.0361, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.6
+
+Parameter Combination (0.0361, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.9
+
+Parameter Combination (0.04899, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 29.5
+
+Parameter Combination (0.04899, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.6
+
+Grid search took 9.0 minutes.
+Step 38
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03183, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.6
+
+Parameter Combination (0.03183, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.9
+
+Parameter Combination (0.05453, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.1
+
+Parameter Combination (0.05453, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.5
+
+Grid search took 9.3 minutes.
+Step 39
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03759, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.2
+
+Parameter Combination (0.03759, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.3
+
+Parameter Combination (0.0489, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.6
+
+Parameter Combination (0.0489, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.1
+
+Grid search took 8.2 minutes.
+Step 40
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.03746, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.4
+
+Parameter Combination (0.03746, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 25.5
+
+Parameter Combination (0.05107, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.2
+
+Parameter Combination (0.05107, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 32.6
+
+Grid search took 7.8 minutes.
+Step 41
+Best Params, Parameter Combination (0.04262, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.0375, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.5
+
+Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.05506, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.7
+
+Parameter Combination (0.05506, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.9
+
+Grid search took 8.5 minutes.
+Step 42
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.02774, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.1
+
+Parameter Combination (0.02774, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.6
+
+Parameter Combination (0.04507, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.6
+
+Parameter Combination (0.04507, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 47.6
+
+Grid search took 6.0 minutes.
+Step 43
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.03322, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.1
+
+Parameter Combination (0.03322, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.9
+
+Parameter Combination (0.0441, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.8
+
+Parameter Combination (0.0441, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.2
+
+Grid search took 5.8 minutes.
+Step 44
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.02857, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.7
+
+Parameter Combination (0.02857, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.7
+
+Parameter Combination (0.04272, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.0
+
+Parameter Combination (0.04272, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.1
+
+Grid search took 9.6 minutes.
+Step 45
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.02649, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.9
+
+Parameter Combination (0.02649, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.4
+
+Parameter Combination (0.04828, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.5
+
+Parameter Combination (0.04828, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.6
+
+Grid search took 7.9 minutes.
+Step 46
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.03187, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.6
+
+Parameter Combination (0.03187, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.3
+
+Parameter Combination (0.04776, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 30.7
+
+Parameter Combination (0.04776, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.7
+
+Grid search took 7.3 minutes.
+Step 47
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.03338, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.9
+
+Parameter Combination (0.03338, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.6
+
+Parameter Combination (0.04249, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.4
+
+Parameter Combination (0.04249, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.2
+
+Grid search took 9.4 minutes.
+Step 48
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.02952, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.8
+
+Parameter Combination (0.02952, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.6
+
+Parameter Combination (0.04812, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 28.8
+
+Parameter Combination (0.04812, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.8
+
+Grid search took 7.3 minutes.
+Step 49
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.02939, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 25.4
+
+Parameter Combination (0.02939, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 31.3
+
+Parameter Combination (0.04369, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.6
+
+Parameter Combination (0.04369, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.2
+
+Grid search took 8.1 minutes.
+Step 50
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.02923, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.1
+
+Parameter Combination (0.02923, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.7
+
+Parameter Combination (0.04869, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.4
+
+Parameter Combination (0.04869, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.2
+
+Grid search took 6.5 minutes.
+Step 51
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.02934, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.4
+
+Parameter Combination (0.02934, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.7
+
+Parameter Combination (0.04141, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.2
+
+Parameter Combination (0.04141, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.9
+
+Grid search took 8.2 minutes.
+Step 52
+Best Params, Parameter Combination (0.0375, 8) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.02872, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.1
+
+Parameter Combination (0.02872, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.1
+
+Parameter Combination (0.04485, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.6
+
+Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Grid search took 7.4 minutes.
+Step 53
+Best Params, Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.03313, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.9
+
+Parameter Combination (0.03313, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.8
+
+Parameter Combination (0.05554, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.6
+
+Parameter Combination (0.05554, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.0
+
+Grid search took 7.8 minutes.
+Step 54
+Best Params, Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.03732, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.5
+
+Parameter Combination (0.03732, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.9
+
+Parameter Combination (0.05092, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 32.6
+
+Parameter Combination (0.05092, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 17.2
+
+Grid search took 8.2 minutes.
+Step 55
+Best Params, Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.03984, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.5
+
+Parameter Combination (0.03984, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.0
+
+Parameter Combination (0.05243, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.5
+
+Parameter Combination (0.05243, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.5
+
+Grid search took 7.7 minutes.
+Step 56
+Best Params, Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.03621, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.9
+
+Parameter Combination (0.03621, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.2
+
+Parameter Combination (0.05738, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.2
+
+Parameter Combination (0.05738, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.0
+
+Grid search took 6.7 minutes.
+Step 57
+Best Params, Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.03942, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.4
+
+Parameter Combination (0.03942, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.6
+
+Parameter Combination (0.05087, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.6
+
+Parameter Combination (0.05087, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 47.5
+
+Grid search took 8.1 minutes.
+Step 58
+Best Params, Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.03573, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.3
+
+Parameter Combination (0.03573, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.4
+
+Parameter Combination (0.0527, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.8
+
+Parameter Combination (0.0527, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.9
+
+Grid search took 7.5 minutes.
+Step 59
+Best Params, Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.03908, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.7
+
+Parameter Combination (0.03908, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.0
+
+Parameter Combination (0.05151, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.9
+
+Parameter Combination (0.05151, 11) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.1
+
+Grid search took 7.5 minutes.
+Step 60
+Best Params, Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.03437, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.4
+
+Parameter Combination (0.03437, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.8
+
+Parameter Combination (0.05602, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 28.0
+
+Parameter Combination (0.05602, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.9
+
+Grid search took 8.3 minutes.
+Step 61
+Best Params, Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.038, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.4
+
+Parameter Combination (0.038, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.4
+
+Parameter Combination (0.05531, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.3
+
+Parameter Combination (0.05531, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 21.2
+
+Grid search took 7.4 minutes.
+Step 62
+Best Params, Parameter Combination (0.04485, 9) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03598, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.6
+
+Parameter Combination (0.05184, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.1
+
+Parameter Combination (0.05184, 10) with keys ['learning_rate', 'batch_size']
+ Accuracy: 15.2
+
+Grid search took 6.8 minutes.
+Step 63
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02944, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.2
+
+Parameter Combination (0.02944, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.5
+
+Parameter Combination (0.04366, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.5
+
+Parameter Combination (0.04366, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.2
+
+Grid search took 10.6 minutes.
+Step 64
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02765, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 47.6
+
+Parameter Combination (0.02765, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.6
+
+Parameter Combination (0.04461, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.5
+
+Parameter Combination (0.04461, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.1
+
+Grid search took 9.1 minutes.
+Step 65
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03073, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 47.1
+
+Parameter Combination (0.03073, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.7
+
+Parameter Combination (0.04302, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.8
+
+Parameter Combination (0.04302, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.4
+
+Grid search took 9.1 minutes.
+Step 66
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03196, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 31.9
+
+Parameter Combination (0.03196, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.0
+
+Parameter Combination (0.04278, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 47.2
+
+Parameter Combination (0.04278, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.6
+
+Grid search took 10.2 minutes.
+Step 67
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02743, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.0
+
+Parameter Combination (0.02743, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.2
+
+Parameter Combination (0.04233, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.3
+
+Parameter Combination (0.04233, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.1
+
+Grid search took 10.3 minutes.
+Step 68
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03061, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.3
+
+Parameter Combination (0.03061, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.1
+
+Parameter Combination (0.04649, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 16.4
+
+Parameter Combination (0.04649, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.0
+
+Grid search took 6.9 minutes.
+Step 69
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03023, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.9
+
+Parameter Combination (0.03023, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 33.9
+
+Parameter Combination (0.04229, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.1
+
+Parameter Combination (0.04229, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.3
+
+Grid search took 8.7 minutes.
+Step 70
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02646, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.7
+
+Parameter Combination (0.02646, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.2
+
+Parameter Combination (0.04031, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.7
+
+Parameter Combination (0.04031, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 47.8
+
+Grid search took 8.3 minutes.
+Step 71
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02527, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.1
+
+Parameter Combination (0.02527, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.6
+
+Parameter Combination (0.04035, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.1
+
+Parameter Combination (0.04035, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.6
+
+Grid search took 10.9 minutes.
+Step 72
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02696, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.8
+
+Parameter Combination (0.02696, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.6
+
+Parameter Combination (0.04655, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.6
+
+Parameter Combination (0.04655, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.7
+
+Grid search took 10.8 minutes.
+Step 73
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02758, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.3
+
+Parameter Combination (0.02758, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.3
+
+Parameter Combination (0.04623, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 29.5
+
+Parameter Combination (0.04623, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 47.6
+
+Grid search took 6.6 minutes.
+Step 74
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02651, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.5
+
+Parameter Combination (0.02651, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.9
+
+Parameter Combination (0.0464, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.2
+
+Parameter Combination (0.0464, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.3
+
+Grid search took 8.7 minutes.
+Step 75
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02748, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.5
+
+Parameter Combination (0.02748, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.9
+
+Parameter Combination (0.04465, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.3
+
+Parameter Combination (0.04465, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.5
+
+Grid search took 10.5 minutes.
+Step 76
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02756, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.0
+
+Parameter Combination (0.02756, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 31.7
+
+Parameter Combination (0.04376, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.3
+
+Parameter Combination (0.04376, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.0
+
+Grid search took 7.9 minutes.
+Step 77
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02799, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.6
+
+Parameter Combination (0.02799, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.0
+
+Parameter Combination (0.04059, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.7
+
+Parameter Combination (0.04059, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.0
+
+Grid search took 8.1 minutes.
+Step 78
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02667, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.4
+
+Parameter Combination (0.02667, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.2
+
+Parameter Combination (0.04143, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.6
+
+Parameter Combination (0.04143, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.2
+
+Grid search took 7.7 minutes.
+Step 79
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03166, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.9
+
+Parameter Combination (0.03166, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.8
+
+Parameter Combination (0.04451, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.2
+
+Parameter Combination (0.04451, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.5
+
+Grid search took 6.9 minutes.
+Step 80
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02543, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.4
+
+Parameter Combination (0.02543, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.3
+
+Parameter Combination (0.04169, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.4
+
+Parameter Combination (0.04169, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.2
+
+Grid search took 6.9 minutes.
+Step 81
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03207, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.9
+
+Parameter Combination (0.03207, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.5
+
+Parameter Combination (0.04387, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.9
+
+Parameter Combination (0.04387, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.3
+
+Grid search took 7.3 minutes.
+Step 82
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02777, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.3
+
+Parameter Combination (0.02777, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.0
+
+Parameter Combination (0.04096, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.8
+
+Parameter Combination (0.04096, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.1
+
+Grid search took 7.1 minutes.
+Step 83
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02767, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.1
+
+Parameter Combination (0.02767, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.0
+
+Parameter Combination (0.04466, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.3
+
+Parameter Combination (0.04466, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.5
+
+Grid search took 7.3 minutes.
+Step 84
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02594, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.8
+
+Parameter Combination (0.02594, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.2
+
+Parameter Combination (0.04233, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.8
+
+Parameter Combination (0.04233, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.4
+
+Grid search took 8.6 minutes.
+Step 85
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02592, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 49.3
+
+Parameter Combination (0.02592, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.9
+
+Parameter Combination (0.04498, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.7
+
+Parameter Combination (0.04498, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.5
+
+Grid search took 8.2 minutes.
+Step 86
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.0323, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.7
+
+Parameter Combination (0.0323, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 46.3
+
+Parameter Combination (0.04413, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.6
+
+Parameter Combination (0.04413, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.6
+
+Grid search took 7.2 minutes.
+Step 87
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03054, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.1
+
+Parameter Combination (0.03054, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.5
+
+Parameter Combination (0.04367, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.3
+
+Parameter Combination (0.04367, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.1
+
+Grid search took 7.7 minutes.
+Step 88
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02857, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.8
+
+Parameter Combination (0.02857, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.1
+
+Parameter Combination (0.04605, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.4
+
+Parameter Combination (0.04605, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.9
+
+Grid search took 7.4 minutes.
+Step 89
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03228, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 47.9
+
+Parameter Combination (0.03228, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.9
+
+Parameter Combination (0.04552, 4) with keys ['learning_rate', 'batch_size']
+ Accuracy: 37.7
+
+Parameter Combination (0.04552, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 43.1
+
+Grid search took 8.4 minutes.
+Step 90
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02998, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.3
+
+Parameter Combination (0.02998, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.5
+
+Parameter Combination (0.04315, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.7
+
+Parameter Combination (0.04315, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 44.2
+
+Grid search took 6.3 minutes.
+Step 91
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.02873, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.8
+
+Parameter Combination (0.02873, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 48.6
+
+Parameter Combination (0.04302, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.4
+
+Parameter Combination (0.04302, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.8
+
+Grid search took 6.1 minutes.
+Step 92
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03111, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.5
+
+Parameter Combination (0.03111, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.4
+
+Parameter Combination (0.04388, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 36.2
+
+Parameter Combination (0.04388, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.4
+
+Grid search took 7.1 minutes.
+Step 93
+Best Params, Parameter Combination (0.03598, 6) with keys ['learning_rate', 'batch_size']
+ Accuracy: 51.6
+
+Parameter Combination (0.03117, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 50.4
+
+Parameter Combination (0.03117, 7) with keys ['learning_rate', 'batch_size']
+ Accuracy: 42.7
+
+Parameter Combination (0.03987, 5) with keys ['learning_rate', 'batch_size']
+ Accuracy: 45.8
+

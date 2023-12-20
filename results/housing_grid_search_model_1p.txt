@@ -1,0 +1,109 @@
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 34.8
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 0.0
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 0.0
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.2, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 13.6
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.2, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 15.7
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.2, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 13.0
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.3, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 7.6
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.3, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 7.9
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.3, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 7.8
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.5, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 3.5
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.5, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 3.6
+
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.5, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 2.4
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 22.7
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 22.8
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 23.0
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.2, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 15.6
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.2, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 15.1
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.2, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 15.3
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.3, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 11.4
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.3, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 11.2
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.3, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 11.2
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.5, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 4.0
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.5, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 4.1
+
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.5, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 4.0
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 35.4
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 35.5
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 35.6
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.2, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 14.4
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.2, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 15.7
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.2, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 15.1
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.3, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 9.0
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.3, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 8.9
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.3, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 9.2
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.5, [5, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 2.7
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.5, [5, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 3.6
+
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.5, [5, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 3.0
+
+Grid search took 5.4 minutes.
