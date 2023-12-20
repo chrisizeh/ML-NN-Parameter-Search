@@ -1,0 +1,27 @@
+Parameter Combination (0.01, 32) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.1
+
+Parameter Combination (0.01, 64) with keys ['learning_rate', 'batch_size']
+ Accuracy: 35.0
+
+Parameter Combination (0.01, 128) with keys ['learning_rate', 'batch_size']
+ Accuracy: 32.0
+
+Parameter Combination (0.05, 32) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.1
+
+Parameter Combination (0.05, 64) with keys ['learning_rate', 'batch_size']
+ Accuracy: 0.0
+
+Parameter Combination (0.05, 128) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.1
+
+Parameter Combination (0.1, 32) with keys ['learning_rate', 'batch_size']
+ Accuracy: 41.1
+
+Parameter Combination (0.1, 64) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.8
+
+Parameter Combination (0.1, 128) with keys ['learning_rate', 'batch_size']
+ Accuracy: 40.2
+

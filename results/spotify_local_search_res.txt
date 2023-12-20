@@ -1,0 +1,2 @@
+{'learning_rate': 0.02537, 'batch_size': 7, 'layer': [19, 36, 35, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0.0093}
+33.66497461928934
