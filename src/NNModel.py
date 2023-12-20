@@ -4,7 +4,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from itertools import product
 
 import random
-
+import time
 
 class NeuralNetwork(nn.Module):
     def __init__(self):
@@ -120,6 +120,7 @@ class NNModel:
 
 
     def grid_search(self, dict_param, train_ds, test_ds, epochs=2):
+        start = time.time()
         best_param = {}
         best_acc = -1
 
@@ -132,7 +133,8 @@ class NNModel:
                 best_param = param_comb
                 best_acc = acc
             print(f"Parameter Combination {str(param_comb)} with keys {str(keys)}\n Accuracy: {acc:>0.1f}\n")
-
+        end = time.time()
+        print(f"Grid search took {round((end - start)/60, 1)} minutes.")
         return best_param, best_acc
 
 
@@ -157,6 +159,7 @@ class NNModel:
 
 
     def local_search(self, init_param, train_ds, test_ds, epochs=2, steps=50): 
+        start = time.time()
         keys = list(init_param.keys())
         params = self.get_all_params(list(init_param.values()), keys)
         best_acc = self.run(params, train_ds, test_ds, epochs)
@@ -173,4 +176,6 @@ class NNModel:
                 best_acc = acc
                 best_param = params
 
-        return best_param
+        end = time.time()
+        print(f"Local search took {round((end - start)/60, 1)} minutes.")
+        return best_param, best_acc
