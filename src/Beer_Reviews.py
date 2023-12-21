@@ -3,10 +3,6 @@
 
 # # Preprocessing + NN Playing for Beer Reviews
 
-# In[2]:
-
-
-# In[4]:
 
 
 import os
@@ -494,7 +490,9 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.02)
 
 def train(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)
+    num_batches = len(dataloader)
     model.train()
+    test_loss = 0
     for batch, (XX, yy) in enumerate(dataloader):
         XX, yy = XX.to(device), yy.to(device)
 
@@ -507,9 +505,14 @@ def train(dataloader, model, loss_fn, optimizer):
         optimizer.step()
         optimizer.zero_grad()
 
+        loss = loss.item()
+        test_loss += loss
+
         if batch % 100 == 0:
-            loss, current = loss.item(), (batch + 1) * len(XX)
+            current = (batch + 1) * len(XX)
             print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
+
+        return test_loss / num_batches
 
 
 # In[ ]:
@@ -518,7 +521,6 @@ def train(dataloader, model, loss_fn, optimizer):
 from sklearn.metrics import f1_score, classification_report
 
 def test(dataloader, model, loss_fn):
-    size = len(dataloader.dataset)
     num_batches = len(dataloader)
     model.eval()
     test_loss, correct = 0, 0
@@ -532,17 +534,45 @@ def test(dataloader, model, loss_fn):
     test_loss /= num_batches
     correct /= num_batches
     print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
+    return test_loss, correct
 
 
 # In[ ]:
 
 
+losses = []
+test_losses = []
+accs = []
+
 epochs = 30
 for t in range(epochs):
     print(f"Epoch {t+1}\n-------------------------------")
-    train(train_dataloader, model, loss_fn, optimizer)
-    test(test_dataloader, model, loss_fn)
+    losses.append(train(train_dataloader, model, loss_fn, optimizer))
+    test_loss, acc = test(test_dataloader, model, loss_fn)
+
+    accs.append(acc)
+    test_losses.append(test_loss)
 print("Done!")
+
+
+# In[ ]:
+
+
+sns.set()
+
+plt.plot(range(len(accs)), accs)
+plt.xlabel('Epochs')
+plt.ylabel("Accuracy")
+plt.savefig(f"../results/beer_init_nn_acc.png", bbox_inches="tight")
+plt.clf()
+
+plt.plot(range(len(losses)), losses, label="Training")
+plt.plot(range(len(test_losses)), test_losses, label="Test")
+plt.xlabel('Epochs')
+plt.ylabel("Loss")
+plt.savefig(f"../results/beer_init_nn_loss.png", bbox_inches="tight")
+plt.legend(loc="upper left")
+plt.clf()
 
 
 # Best: 89.5% -> 30 epochs
@@ -615,7 +645,7 @@ test_small_ds = TensorDataset(X_test_small_tensor, y_test_small_tensor)
 
 # ## Run Searches
 
-# In[119]:
+
 # In[105]:
 
 
@@ -670,7 +700,7 @@ nnmodel.defaults["layer"] = best["layer"]
 
 
 print(nnmodel.defaults)
-acc = nnmodel.run(nnmodel.defaults, train_ds, test_ds, 30, out=True)
+acc = nnmodel.run(nnmodel.defaults, train_ds, test_ds, 30, out=True, name="beer_grid_res")
 print(acc)
 
 
@@ -680,6 +710,12 @@ print(acc)
 acc = test(valid_dataloader, nnmodel.model, nnmodel.loss_fn)
 print(acc)
 validate(valid_dataloader, nnmodel.model)
+
+
+# In[ ]:
+
+
+grid_best = nnmodel.defaults
 
 
 # ## Local Search
@@ -693,8 +729,8 @@ nnmodel = NNModel(layer, device, acc_func=acc_func, loss_func=nn.CrossEntropyLos
 # In[ ]:
 
 
-init_param = {"learning_rate": 0.01, "batch_size": 64}
-best, acc = nnmodel.local_search(init_param, train_small_ds, test_small_ds, steps=50, epochs=30)
+init_param = {"learning_rate": grid_best["learning_rate"], "batch_size": grid_best["batch_size"]}
+best, acc = nnmodel.local_search(init_param, train_small_ds, test_small_ds, steps=5, epochs=30)
 print(best)
 
 
@@ -703,8 +739,8 @@ print(best)
 
 nnmodel.defaults["learning_rate"] = best["learning_rate"]
 nnmodel.defaults["batch_size"] = best["batch_size"]
-init_param = {"layer": layer, "dropout": 0.2}
-best, acc = nnmodel.local_search(init_param, train_small_ds, test_small_ds, steps=50, epochs=30)
+init_param = {"layer": grid_best["layer"], "dropout": grid_best["dropout"]}
+best, acc = nnmodel.local_search(init_param, train_small_ds, test_small_ds, steps=5, epochs=30)
 
 
 # In[ ]:
@@ -718,7 +754,7 @@ nnmodel.defaults["layer"] = best["layer"]
 
 
 print(nnmodel.defaults)
-acc = nnmodel.run(nnmodel.defaults, train_ds, test_ds, 30, out=True)
+acc = nnmodel.run(nnmodel.defaults, train_ds, test_ds, 30, out=True, name="beer_local_res")
 print(acc)
 
 

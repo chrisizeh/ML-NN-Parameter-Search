@@ -2,10 +2,14 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
 from itertools import product
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 import random
 import time
 import copy
+
+sns.set()
 
 class NeuralNetwork(nn.Module):
     def __init__(self):
@@ -66,7 +70,10 @@ class NNModel:
 
     def train(self, dataloader, loss_fn, optimizer, out=False):
         size = len(dataloader.dataset)
+        num_batches = len(dataloader)
         self.model.train()
+
+        train_loss = 0
         for batch, (XX, yy) in enumerate(dataloader):
             XX, yy = XX.to(self.device), yy.to(self.device)
             if (self.reshape):
@@ -80,11 +87,14 @@ class NNModel:
             loss.backward()
             optimizer.step()
             optimizer.zero_grad()
+            train_loss += loss.item()
 
             if batch % 100 == 0:
-                loss, current = loss.item(), (batch + 1) * len(XX)
+                current = (batch + 1) * len(XX)
                 if out:
-                    print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
+                    print(f"loss: {train_loss:>7f}  [{current:>5d}/{size:>5d}]")
+
+            return train_loss / num_batches
 
 
     def test(self, dataloader, loss_fn, out=False):
@@ -106,8 +116,23 @@ class NNModel:
             print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
         return (100*correct), test_loss
     
+    def plot(self, losses, test_losses, accs, name):
+        plt.plot(range(len(accs)), accs)
+        plt.xlabel('Epochs')
+        plt.ylabel("Accuracy")
+        plt.savefig(f"../results/{name}_acc.png", bbox_inches="tight")
+        plt.clf()
 
-    def run(self, params, train_ds, test_ds, epochs, out=False):
+        plt.plot(range(len(losses)), losses, label="Training")
+        plt.plot(range(len(test_losses)), test_losses, label="Test")
+        plt.xlabel('Epochs')
+        plt.ylabel("Loss")
+        plt.legend(loc="upper right")
+        plt.savefig(f"../results/{name}_loss.png", bbox_inches="tight")
+        plt.clf()
+    
+
+    def run(self, params, train_ds, test_ds, epochs, out=False, name=None):
         train_dataloader = DataLoader(train_ds, batch_size=params["batch_size"])
         test_dataloader = DataLoader(test_ds, batch_size=params["batch_size"])
 
@@ -116,12 +141,22 @@ class NNModel:
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr=params["learning_rate"])
         early_stopper = EarlyStopper(patience=3)
 
+        losses = []
+        test_losses = []
+        accs = []
+
         for t in range(epochs):
-            self.train(train_dataloader, self.loss_fn, self.optimizer, out=out)
+            losses.append(self.train(train_dataloader, self.loss_fn, self.optimizer, out=out))
             acc, test_loss = self.test(test_dataloader, self.loss_fn, out=out)
+
+            accs.append(acc)
+            test_losses.append(test_losses)
+
             if early_stopper.early_stop(test_loss):     
                 print("Early stopping at epoch:", t)
                 break
+        if name:
+            self.plot(losses, test_losses, accs, name)
         return acc
     
 
