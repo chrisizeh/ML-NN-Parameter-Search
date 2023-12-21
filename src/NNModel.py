@@ -5,20 +5,12 @@ from itertools import product
 
 import random
 import time
+import copy
 
 class NeuralNetwork(nn.Module):
     def __init__(self):
         super().__init__()
         self.flatten = nn.Flatten()
-        self.linear_relu_stack = nn.Sequential(
-            nn.Linear(282, 250),
-            nn.ReLU(),
-            nn.Linear(250, 164),
-            nn.ReLU(),
-            nn.Linear(164, 164),
-            nn.ReLU(),
-            nn.Linear(164, 104)
-        )
 
     def forward(self, x):
         x = self.flatten(x)
@@ -53,6 +45,7 @@ class NNModel:
                 layer_nn.append(nn.Dropout(dropout))
 
         self.model.linear_relu_stack = nn.Sequential(*layer_nn)
+        print(self.model)
 
 
     def train(self, dataloader, loss_fn, optimizer):
@@ -96,6 +89,7 @@ class NNModel:
     
 
     def run(self, params, train_ds, test_ds, epochs):
+        print("run: " + str(params))
         train_dataloader = DataLoader(train_ds, batch_size=params["batch_size"])
         test_dataloader = DataLoader(test_ds, batch_size=params["batch_size"])
 
@@ -159,8 +153,11 @@ class NNModel:
 
 
     def local_search(self, init_param, train_ds, test_ds, epochs=2, steps=50): 
+        init_param = copy.deepcopy(init_param)
         start = time.time()
         keys = list(init_param.keys())
+        print(keys)
+        print(init_param.values())
         params = self.get_all_params(list(init_param.values()), keys)
         best_acc = self.run(params, train_ds, test_ds, epochs)
         

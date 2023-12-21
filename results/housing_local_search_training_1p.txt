@@ -1,851 +1,340 @@
+{'learning_rate': 0.1, 'batch_size': 64}
+run: {'learning_rate': 0.1, 'batch_size': 64, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
 Step 0
-Best Params, Parameter Combination [0.01, 64] with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
+Best Params, Parameter Combination [0.1, 64] with keys ['learning_rate', 'batch_size']
+ Accuracy: 21.7
 
-Parameter Combination (0.0083, 49) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.6
+run: {'learning_rate': 0.0824, 'batch_size': 48, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.0824, 48) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.0
 
-Parameter Combination (0.0083, 72) with keys ['learning_rate', 'batch_size']
+run: {'learning_rate': 0.0824, 'batch_size': 73, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.0824, 73) with keys ['learning_rate', 'batch_size']
  Accuracy: 0.0
 
-Parameter Combination (0.01246, 49) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.4
+run: {'learning_rate': 0.11506, 'batch_size': 48, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.11506, 48) with keys ['learning_rate', 'batch_size']
+ Accuracy: 0.0
 
-Parameter Combination (0.01246, 72) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.7
+run: {'learning_rate': 0.11506, 'batch_size': 73, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.11506, 73) with keys ['learning_rate', 'batch_size']
+ Accuracy: 32.8
 
-Grid search took 0.2 minutes.
+Grid search took 0.6 minutes.
 Step 1
-Best Params, Parameter Combination (0.01246, 49) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.4
+Best Params, Parameter Combination (0.0824, 48) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.0
 
-Parameter Combination (0.01076, 43) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Parameter Combination (0.01076, 62) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.5
-
-Parameter Combination (0.01414, 43) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.0
-
-Parameter Combination (0.01414, 62) with keys ['learning_rate', 'batch_size']
+run: {'learning_rate': 0.05942, 'batch_size': 40, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.05942, 40) with keys ['learning_rate', 'batch_size']
  Accuracy: 0.0
 
-Grid search took 0.3 minutes.
+run: {'learning_rate': 0.05942, 'batch_size': 53, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.05942, 53) with keys ['learning_rate', 'batch_size']
+ Accuracy: 0.0
+
+run: {'learning_rate': 0.10382, 'batch_size': 40, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.10382, 40) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.0
+
+run: {'learning_rate': 0.10382, 'batch_size': 53, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.10382, 53) with keys ['learning_rate', 'batch_size']
+ Accuracy: 0.0
+
+Grid search took 0.6 minutes.
 Step 2
-Best Params, Parameter Combination (0.01076, 62) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.5
+Best Params, Parameter Combination (0.0824, 48) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.0
 
-Parameter Combination (0.00826, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.3
-
-Parameter Combination (0.00826, 74) with keys ['learning_rate', 'batch_size']
- Accuracy: 33.8
-
-Parameter Combination (0.01322, 55) with keys ['learning_rate', 'batch_size']
+run: {'learning_rate': 0.06439, 'batch_size': 37, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.06439, 37) with keys ['learning_rate', 'batch_size']
  Accuracy: 0.0
 
-Parameter Combination (0.01322, 74) with keys ['learning_rate', 'batch_size']
+run: {'learning_rate': 0.06439, 'batch_size': 56, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.06439, 56) with keys ['learning_rate', 'batch_size']
  Accuracy: 0.0
 
-Grid search took 0.2 minutes.
+run: {'learning_rate': 0.0989, 'batch_size': 37, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.0989, 37) with keys ['learning_rate', 'batch_size']
+ Accuracy: 0.0
+
+run: {'learning_rate': 0.0989, 'batch_size': 56, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.0989, 56) with keys ['learning_rate', 'batch_size']
+ Accuracy: 0.0
+
+Grid search took 0.7 minutes.
 Step 3
-Best Params, Parameter Combination (0.01076, 62) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.5
-
-Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00832, 73) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.3
-
-Parameter Combination (0.01349, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.6
-
-Parameter Combination (0.01349, 73) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.2 minutes.
-Step 4
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00734, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.8
-
-Parameter Combination (0.00734, 60) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Parameter Combination (0.00975, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.3
-
-Parameter Combination (0.00975, 60) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.1
-
-Grid search took 0.3 minutes.
-Step 5
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00618, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00618, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.8
-
-Parameter Combination (0.01028, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.9
-
-Parameter Combination (0.01028, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.3
-
-Grid search took 0.3 minutes.
-Step 6
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00693, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.2
-
-Parameter Combination (0.00693, 56) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Parameter Combination (0.01004, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01004, 56) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.1
-
-Grid search took 0.3 minutes.
-Step 7
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00712, 42) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00712, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.5
-
-Parameter Combination (0.00925, 42) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00925, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 8
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00626, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.2
-
-Parameter Combination (0.00626, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01054, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01054, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.9
-
-Grid search took 0.3 minutes.
-Step 9
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00681, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.00681, 52) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.7
-
-Parameter Combination (0.00963, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Parameter Combination (0.00963, 52) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.6
-
-Grid search took 0.3 minutes.
-Step 10
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00628, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00628, 61) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Parameter Combination (0.01054, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.6
-
-Parameter Combination (0.01054, 61) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 11
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00679, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.7
-
-Parameter Combination (0.00679, 51) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.9
-
-Parameter Combination (0.01021, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01021, 51) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.9
-
-Grid search took 0.3 minutes.
-Step 12
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00652, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.00652, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.3
-
-Parameter Combination (0.00954, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.2
-
-Parameter Combination (0.00954, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.4
-
-Grid search took 0.3 minutes.
-Step 13
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00705, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.8
-
-Parameter Combination (0.00705, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.2
-
-Parameter Combination (0.01069, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01069, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.8
-
-Grid search took 0.3 minutes.
-Step 14
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00711, 42) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Parameter Combination (0.00711, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01063, 42) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.9
-
-Parameter Combination (0.01063, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Grid search took 0.3 minutes.
-Step 15
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00692, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.00692, 60) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.0
-
-Parameter Combination (0.01072, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01072, 60) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Grid search took 0.3 minutes.
-Step 16
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00631, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00631, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.6
-
-Parameter Combination (0.01008, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.0
-
-Parameter Combination (0.01008, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 17
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00659, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Parameter Combination (0.00659, 51) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00958, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Parameter Combination (0.00958, 51) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 18
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00742, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.00742, 52) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01002, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.8
-
-Parameter Combination (0.01002, 52) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 19
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00617, 40) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.1
-
-Parameter Combination (0.00617, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01005, 40) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.01005, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Grid search took 0.3 minutes.
-Step 20
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00702, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Parameter Combination (0.00702, 52) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Parameter Combination (0.01043, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.0
-
-Parameter Combination (0.01043, 52) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Grid search took 0.4 minutes.
-Step 21
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00694, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.3
-
-Parameter Combination (0.00694, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.9
-
-Parameter Combination (0.01073, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01073, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.1
-
-Grid search took 0.3 minutes.
-Step 22
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00699, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.7
-
-Parameter Combination (0.00699, 52) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.5
-
-Parameter Combination (0.00982, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.3
-
-Parameter Combination (0.00982, 52) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.4
-
-Grid search took 0.4 minutes.
-Step 23
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.0074, 33) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.3
-
-Parameter Combination (0.0074, 56) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01049, 33) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.1
-
-Parameter Combination (0.01049, 56) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 24
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00592, 35) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.2
-
-Parameter Combination (0.00592, 60) with keys ['learning_rate', 'batch_size']
- Accuracy: 33.8
-
-Parameter Combination (0.01077, 35) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.6
-
-Parameter Combination (0.01077, 60) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.9
-
-Grid search took 0.3 minutes.
-Step 25
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00685, 42) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.1
-
-Parameter Combination (0.00685, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.0
-
-Parameter Combination (0.01008, 42) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01008, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.8
-
-Grid search took 0.3 minutes.
-Step 26
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00645, 35) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.6
-
-Parameter Combination (0.00645, 51) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.0
-
-Parameter Combination (0.01014, 35) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.0
-
-Parameter Combination (0.01014, 51) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Grid search took 0.3 minutes.
-Step 27
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00686, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.3
-
-Parameter Combination (0.00686, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.3
-
-Parameter Combination (0.00922, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00922, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 28
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00668, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.0
-
-Parameter Combination (0.00668, 52) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.01044, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Parameter Combination (0.01044, 52) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.9
-
-Grid search took 0.3 minutes.
-Step 29
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00728, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.0
-
-Parameter Combination (0.00728, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00916, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.6
-
-Parameter Combination (0.00916, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.3
-
-Grid search took 0.3 minutes.
-Step 30
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00651, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.00651, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.5
-
-Parameter Combination (0.01014, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Parameter Combination (0.01014, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.1
-
-Grid search took 0.3 minutes.
-Step 31
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00723, 40) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00723, 56) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.1
-
-Parameter Combination (0.01015, 40) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.3
-
-Parameter Combination (0.01015, 56) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Grid search took 0.3 minutes.
-Step 32
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00584, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.8
-
-Parameter Combination (0.00584, 56) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.3
-
-Parameter Combination (0.00969, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Parameter Combination (0.00969, 56) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.6
-
-Grid search took 0.3 minutes.
-Step 33
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00693, 35) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.0
-
-Parameter Combination (0.00693, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.8
-
-Parameter Combination (0.00948, 35) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.00948, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.9
-
-Grid search took 0.3 minutes.
-Step 34
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00704, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Parameter Combination (0.00704, 60) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Parameter Combination (0.00933, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.5
-
-Parameter Combination (0.00933, 60) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 35
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00717, 42) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.9
-
-Parameter Combination (0.00717, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.5
-
-Parameter Combination (0.0101, 42) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.1
-
-Parameter Combination (0.0101, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.8
-
-Grid search took 0.3 minutes.
-Step 36
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00742, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.00742, 56) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01071, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.0
-
-Parameter Combination (0.01071, 56) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 37
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.0072, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.0072, 58) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Parameter Combination (0.00999, 39) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.00999, 58) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 38
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00666, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.2
-
-Parameter Combination (0.00666, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.0
-
-Parameter Combination (0.00941, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00941, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 39
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00715, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.1
-
-Parameter Combination (0.00715, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.01023, 38) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.8
-
-Parameter Combination (0.01023, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Grid search took 0.3 minutes.
-Step 40
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.0064, 40) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.0064, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 34.3
-
-Parameter Combination (0.00918, 40) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00918, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.9
-
-Grid search took 0.3 minutes.
-Step 41
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.0063, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.0063, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00939, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.6
-
-Parameter Combination (0.00939, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 42
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00673, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.7
-
-Parameter Combination (0.00673, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.6
-
-Parameter Combination (0.00928, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.00928, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.3
-
-Grid search took 0.3 minutes.
-Step 43
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00615, 40) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.9
-
-Parameter Combination (0.00615, 54) with keys ['learning_rate', 'batch_size']
+Best Params, Parameter Combination (0.0824, 48) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.0
+
+run: {'learning_rate': 0.06394, 'batch_size': 37, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.06394, 37) with keys ['learning_rate', 'batch_size']
  Accuracy: 33.9
 
-Parameter Combination (0.00978, 40) with keys ['learning_rate', 'batch_size']
+run: {'learning_rate': 0.06394, 'batch_size': 52, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.06394, 52) with keys ['learning_rate', 'batch_size']
  Accuracy: 0.0
 
-Parameter Combination (0.00978, 54) with keys ['learning_rate', 'batch_size']
+run: {'learning_rate': 0.10691, 'batch_size': 37, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.10691, 37) with keys ['learning_rate', 'batch_size']
+ Accuracy: 33.2
+
+run: {'learning_rate': 0.10691, 'batch_size': 52, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.10691, 52) with keys ['learning_rate', 'batch_size']
  Accuracy: 0.0
 
-Grid search took 0.3 minutes.
-Step 44
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
+Grid search took 0.6 minutes.
+Step 4
+Best Params, Parameter Combination (0.0824, 48) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.0
 
-Parameter Combination (0.0072, 36) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.8
+run: {'learning_rate': 0.05985, 'batch_size': 39, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.05985, 39) with keys ['learning_rate', 'batch_size']
+ Accuracy: 23.8
 
-Parameter Combination (0.0072, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.8
-
-Parameter Combination (0.00949, 36) with keys ['learning_rate', 'batch_size']
+run: {'learning_rate': 0.05985, 'batch_size': 57, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.05985, 57) with keys ['learning_rate', 'batch_size']
  Accuracy: 0.0
 
-Parameter Combination (0.00949, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
+run: {'learning_rate': 0.10557, 'batch_size': 39, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.10557, 39) with keys ['learning_rate', 'batch_size']
+ Accuracy: 21.5
 
-Grid search took 0.3 minutes.
-Step 45
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
+run: {'learning_rate': 0.10557, 'batch_size': 57, 'layer': [5, 5, 2, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=2, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.10557, 57) with keys ['learning_rate', 'batch_size']
+ Accuracy: 34.3
 
-Parameter Combination (0.00703, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.1
-
-Parameter Combination (0.00703, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.5
-
-Parameter Combination (0.01067, 34) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01067, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Grid search took 0.3 minutes.
-Step 46
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00604, 33) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00604, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 33.4
-
-Parameter Combination (0.00998, 33) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.9
-
-Parameter Combination (0.00998, 55) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.7
-
-Grid search took 0.3 minutes.
-Step 47
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00681, 36) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.2
-
-Parameter Combination (0.00681, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.01024, 36) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.0
-
-Parameter Combination (0.01024, 53) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Grid search took 0.3 minutes.
-Step 48
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00703, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00703, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.0
-
-Parameter Combination (0.01039, 37) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Parameter Combination (0.01039, 57) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Grid search took 0.3 minutes.
-Step 49
-Best Params, Parameter Combination (0.00832, 47) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.9
-
-Parameter Combination (0.00725, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 36.6
-
-Parameter Combination (0.00725, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.3
-
-Parameter Combination (0.00934, 41) with keys ['learning_rate', 'batch_size']
- Accuracy: 0.0
-
-Parameter Combination (0.00934, 59) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.4
-
-Grid search took 0.3 minutes.
-Local search took 14.4 minutes.
+Grid search took 0.6 minutes.
+Local search took 3.2 minutes.
+(0.10557, 57)

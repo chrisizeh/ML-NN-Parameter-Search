@@ -1,0 +1,14 @@
+{'learning_rate': 0.1, 'batch_size': 64, 'layer': [5, 80, 78, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+run: {'learning_rate': 0.1, 'batch_size': 64, 'layer': [5, 80, 78, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=5, out_features=80, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=80, out_features=78, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=78, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+30.959999999999997
