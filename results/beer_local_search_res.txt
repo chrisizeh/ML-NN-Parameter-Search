@@ -1,0 +1,1 @@
+{'learning_rate': <class 'torch.nn.modules.linear.Identity'>, 'batch_size': 0, 'layer': [922, 250, 164, 104], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0}
