@@ -62,7 +62,6 @@ class NNModel:
                 layer_nn.append(nn.Dropout(dropout))
 
         self.model.linear_relu_stack = nn.Sequential(*layer_nn)
-        print(self.model)
 
 
     def train(self, dataloader, loss_fn, optimizer, out=False):
@@ -105,7 +104,7 @@ class NNModel:
         correct /= num_batches
         if out:
             print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
-        return (100*correct)
+        return (100*correct), test_loss
     
 
     def run(self, params, train_ds, test_ds, epochs, out=False):
@@ -152,44 +151,44 @@ class NNModel:
             print(f"Parameter Combination {str(param_comb)} with keys {str(keys)}\n Accuracy: {acc:>0.1f}\n")
         end = time.time()
         print(f"Grid search took {round((end - start)/60, 1)} minutes.")
-        return best_param, best_acc
+
+        res = {}
+        for i in range(len(keys)):
+            res[keys[i]] = best_param[i]
+        return res, best_acc
 
 
-    def neighborhood(self, params, keys):
+    def neighborhood(self, params):
         param_list = {}
-        for i, val in enumerate(params):
+        for key, val in params.items():
             if(type(val) == float):
-                param_list[keys[i]] = [round(val * random.uniform(0.7, 0.9), 5), round(val * random.uniform(1.1, 1.3), 5)]
+                param_list[key] = [round(val * random.uniform(0.7, 0.9), 5), round(val * random.uniform(1.1, 1.3), 5)]
             elif(type(val) == int):
-                param_list[keys[i]] = [int(val * random.uniform(0.7, 0.9)), int(val * random.uniform(1.1, 1.3))]
+                param_list[key] = [int(val * random.uniform(0.7, 0.9)), int(val * random.uniform(1.1, 1.3))]
             elif(type(val) == list):
-                param_list[keys[i]] = [[val[0]], [val[0]]]
+                param_list[key] = [[val[0]], [val[0]]]
                 for j in range(1, len(val)-1):
-                    param_list[keys[i]][0].append(int(val[j] * random.uniform(0.7, 0.9)))
-                    param_list[keys[i]][1].append(int(val[j] * random.uniform(1.1, 1.3)))
+                    param_list[key][0].append(int(val[j] * random.uniform(0.7, 0.9)))
+                    param_list[key][1].append(int(val[j] * random.uniform(1.1, 1.3)))
 
-                param_list[keys[i]][0].append(val[-1])
-                param_list[keys[i]][1].append(val[-1])
+                param_list[key][0].append(val[-1])
+                param_list[key][1].append(val[-1])
             elif(callable(val)):
-                param_list[keys[i]] = self.options[keys[i]]
+                param_list[key] = self.options[key]
         return param_list
 
 
     def local_search(self, init_param, train_ds, test_ds, epochs=2, steps=50): 
-        init_param = copy.deepcopy(init_param)
+        best_param = copy.deepcopy(init_param)
         start = time.time()
         keys = list(init_param.keys())
-        print(keys)
-        print(init_param.values())
-        params = self.get_all_params(list(init_param.values()), keys)
+        params = self.get_all_params(list(best_param.values()), list(best_param.keys()))
         best_acc = self.run(params, train_ds, test_ds, epochs)
         
-        best_param = list(init_param.values())
-
         for i in range(steps):
             print(f"Step {i}")
-            print(f"Best Params, Parameter Combination {str(best_param)} with keys {str(keys)}\n Accuracy: {best_acc:>0.1f}\n")
-            neighbor_params = self.neighborhood(best_param, keys)
+            print(f"Best Params, Parameter Combination {str(best_param)}\n Accuracy: {best_acc:>0.1f}\n")
+            neighbor_params = self.neighborhood(best_param)
             params, acc = self.grid_search(neighbor_params, train_ds, test_ds, epochs=epochs)
 
             if(acc > best_acc):

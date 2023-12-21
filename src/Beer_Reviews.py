@@ -5,6 +5,7 @@
 
 # In[2]:
 
+
 # In[4]:
 
 
@@ -242,14 +243,6 @@ from sklearn.model_selection import train_test_split
 le = LabelEncoder()
 le.fit(df['beer_style'])
 df['class'] = le.transform(df['beer_style'])
-
-
-# In[25]:
-
-
-# le = LabelEncoder()
-# le.fit(df['review_profilename'])
-# df['review_profilecode'] = le.transform(df['review_profilename'])
 
 
 # In[26]:
@@ -559,16 +552,14 @@ print("Done!")
 # In[ ]:
 
 
-def validate(dataloader, model, loss_fn):
+def validate(dataloader, model):
     num_batches = len(dataloader)
     assert num_batches == 1
     model.eval()
-    test_loss, correct = 0, 0
     with torch.no_grad():
         for XX, yy in dataloader:
             XX, yy = XX.to(device), yy.to(device)
             pred = model(XX)
-            test_loss += loss_fn(pred, yy).item()
             print(classification_report(yy, pred.argmax(1)))
 
 
@@ -576,7 +567,7 @@ def validate(dataloader, model, loss_fn):
 
 
 print(test(valid_dataloader, model, loss_fn))
-validate(valid_dataloader, model, loss_fn)
+validate(valid_dataloader, model)
 
 
 # Result for validation set: 90.2%
@@ -624,7 +615,7 @@ test_small_ds = TensorDataset(X_test_small_tensor, y_test_small_tensor)
 
 # ## Run Searches
 
-
+# In[119]:
 # In[105]:
 
 
@@ -660,8 +651,8 @@ print(best)
 # In[93]:
 
 
-nnmodel.defaults["learning_rate"] = best[0]
-nnmodel.defaults["batch_size"] = best[1]
+nnmodel.defaults["learning_rate"] = best["learning_rate"]
+nnmodel.defaults["batch_size"] = best["batch_size"]
 dict_param_2 = {"activation": [nn.ReLU, nn.Sigmoid, nn.Identity], "dropout": [0, 0.2, 0.3, 0.5], "layer": test_layer}
 best, acc = nnmodel.grid_search(dict_param_2, train_small_ds, test_small_ds, epochs=30)
 print(best)
@@ -670,9 +661,9 @@ print(best)
 # In[86]:
 
 
-nnmodel.defaults["activation"] = best[0]
-nnmodel.defaults["dropout"] = best[1]
-nnmodel.defaults["layer"] = best[2]
+nnmodel.defaults["activation"] = best["activation"]
+nnmodel.defaults["dropout"] = best["dropout"]
+nnmodel.defaults["layer"] = best["layer"]
 
 
 # In[ ]:
@@ -688,6 +679,7 @@ print(acc)
 
 acc = test(valid_dataloader, nnmodel.model, nnmodel.loss_fn)
 print(acc)
+validate(valid_dataloader, nnmodel.model)
 
 
 # ## Local Search
@@ -709,18 +701,17 @@ print(best)
 # In[ ]:
 
 
-nnmodel.defaults["learning_rate"] = best[0]
-nnmodel.defaults["batch_size"] = best[1]
-init_param = {"layer": layer, "dropout": 0.2, "activation": nn.ReLU}
+nnmodel.defaults["learning_rate"] = best["learning_rate"]
+nnmodel.defaults["batch_size"] = best["batch_size"]
+init_param = {"layer": layer, "dropout": 0.2}
 best, acc = nnmodel.local_search(init_param, train_small_ds, test_small_ds, steps=50, epochs=30)
 
 
 # In[ ]:
 
 
-nnmodel.defaults["activation"] = best[0]
-nnmodel.defaults["dropout"] = best[1]
-nnmodel.defaults["layer"] = best[2]
+nnmodel.defaults["dropout"] = best["dropout"]
+nnmodel.defaults["layer"] = best["layer"]
 
 
 # In[ ]:
@@ -734,7 +725,9 @@ print(acc)
 # In[ ]:
 
 
-test(valid_dataloader, nnmodel.model, nnmodel.loss_fn)
+acc = test(valid_dataloader, nnmodel.model, nnmodel.loss_fn)
+print(acc)
+validate(valid_dataloader, nnmodel.model)
 
 
 # # Random Forest
@@ -758,6 +751,6 @@ from sklearn.metrics import f1_score, accuracy_score
 accuracy = accuracy_score(y_valid, y_prediction)
 print(f'Accuracy: {accuracy}')
 
-f1 = f1_score(y_valid, y_prediction)
+f1 = f1_score(y_valid, y_prediction, average='weighted')
 print(f'F1-Score: {f1}')
 
