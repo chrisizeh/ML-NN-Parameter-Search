@@ -1,3 +1,4 @@
 Test Error: 
- Accuracy: 46.8%, Avg loss: 0.012412 
+ Accuracy: 40.8%, Avg loss: 0.016728 
 
+None

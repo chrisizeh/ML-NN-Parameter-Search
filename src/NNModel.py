@@ -17,6 +17,23 @@ class NeuralNetwork(nn.Module):
         logits = self.linear_relu_stack(x)
         return logits
 
+class EarlyStopper:
+    def __init__(self, patience=1, min_delta=0):
+        self.patience = patience
+        self.min_delta = min_delta
+        self.counter = 0
+        self.min_validation_loss = float('inf')
+
+    def early_stop(self, validation_loss):
+        if validation_loss < self.min_validation_loss:
+            self.min_validation_loss = validation_loss
+            self.counter = 0
+        elif validation_loss > (self.min_validation_loss + self.min_delta):
+            self.counter += 1
+            if self.counter >= self.patience:
+                return True
+        return False
+
 class NNModel:
 
     def __init__(self, layer, device, acc_func, loss_func, reshape=False):
@@ -85,7 +102,7 @@ class NNModel:
                 correct += self.acc_func(pred, yy)
         test_loss /= num_batches
         correct /= size
-        return (100*correct)
+        return (100*correct), test_loss
     
 
     def run(self, params, train_ds, test_ds, epochs):
@@ -96,10 +113,15 @@ class NNModel:
         self.create_model(params["layer"], params["activation"], params["dropout"])
         self.loss_fn = self.loss_func()
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr=params["learning_rate"])
-        
+        early_stopper = EarlyStopper(patience=3)
+
         for t in range(epochs):
             self.train(train_dataloader, self.loss_fn, self.optimizer)
-            acc = self.test(test_dataloader, self.loss_fn)
+            acc, test_loss = self.test(test_dataloader, self.loss_fn)
+            print(acc, test_loss)
+            if early_stopper.early_stop(test_loss):     
+                print("Early stopping at epoch:", t)
+                break
         return acc
     
 

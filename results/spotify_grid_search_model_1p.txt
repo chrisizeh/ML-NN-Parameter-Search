@@ -1,108 +1,680 @@
-Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 41.1
-
-Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
  Accuracy: 0.0
 
-Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=10, out_features=15, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=15, out_features=10, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): ReLU()
+  )
+)
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 0.0
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=50, out_features=50, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=50, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
  Accuracy: 40.6
 
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0.2}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=15, out_features=10, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.2, inplace=False)
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): ReLU()
+    (8): Dropout(p=0.2, inplace=False)
+  )
+)
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.2, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 0.0
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0.2}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=10, out_features=15, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.2, inplace=False)
+    (6): Linear(in_features=15, out_features=10, bias=True)
+    (7): ReLU()
+    (8): Dropout(p=0.2, inplace=False)
+    (9): Linear(in_features=10, out_features=1, bias=True)
+    (10): ReLU()
+    (11): Dropout(p=0.2, inplace=False)
+  )
+)
+Early stopping at epoch: 3
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.2, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 15.4
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0.2}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=50, out_features=50, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.2, inplace=False)
+    (6): Linear(in_features=50, out_features=1, bias=True)
+    (7): ReLU()
+    (8): Dropout(p=0.2, inplace=False)
+  )
+)
 Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.2, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 18.5
+ Accuracy: 0.0
 
-Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.2, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 19.5
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0.3}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=15, out_features=10, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): ReLU()
+    (8): Dropout(p=0.3, inplace=False)
+  )
+)
+Early stopping at epoch: 11
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.3, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 9.4
 
-Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.2, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 19.0
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0.3}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=10, out_features=15, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Linear(in_features=15, out_features=10, bias=True)
+    (7): ReLU()
+    (8): Dropout(p=0.3, inplace=False)
+    (9): Linear(in_features=10, out_features=1, bias=True)
+    (10): ReLU()
+    (11): Dropout(p=0.3, inplace=False)
+  )
+)
+Early stopping at epoch: 3
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.3, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 9.5
 
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0.3}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=50, out_features=50, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Linear(in_features=50, out_features=1, bias=True)
+    (7): ReLU()
+    (8): Dropout(p=0.3, inplace=False)
+  )
+)
+Early stopping at epoch: 6
 Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.3, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 8.8
+ Accuracy: 8.6
 
-Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.3, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 9.1
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0.5}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=15, out_features=10, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): ReLU()
+    (8): Dropout(p=0.5, inplace=False)
+  )
+)
+Early stopping at epoch: 7
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.5, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 2.7
 
-Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.3, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 7.9
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0.5}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=10, out_features=15, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=15, out_features=10, bias=True)
+    (7): ReLU()
+    (8): Dropout(p=0.5, inplace=False)
+    (9): Linear(in_features=10, out_features=1, bias=True)
+    (10): ReLU()
+    (11): Dropout(p=0.5, inplace=False)
+  )
+)
+Early stopping at epoch: 5
+Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.5, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 2.5
 
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0.5}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=50, out_features=50, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=50, out_features=1, bias=True)
+    (7): ReLU()
+    (8): Dropout(p=0.5, inplace=False)
+  )
+)
+Early stopping at epoch: 3
 Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.5, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 3.0
-
-Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.5, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 3.4
-
-Parameter Combination (<class 'torch.nn.modules.activation.ReLU'>, 0.5, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 2.9
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 30.5
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 30.4
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 30.4
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.2, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 16.8
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.2, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 17.9
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.2, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 18.2
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.3, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 9.2
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.3, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 9.8
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.3, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 10.3
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.5, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 3.2
-
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.5, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
  Accuracy: 3.1
 
-Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.5, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 3.2
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): Sigmoid()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): Sigmoid()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): Sigmoid()
+  )
+)
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 30.9
 
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): Sigmoid()
+    (2): Linear(in_features=10, out_features=15, bias=True)
+    (3): Sigmoid()
+    (4): Linear(in_features=15, out_features=10, bias=True)
+    (5): Sigmoid()
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): Sigmoid()
+  )
+)
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 30.7
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): Sigmoid()
+    (2): Linear(in_features=50, out_features=50, bias=True)
+    (3): Sigmoid()
+    (4): Linear(in_features=50, out_features=1, bias=True)
+    (5): Sigmoid()
+  )
+)
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 30.7
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0.2}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): Sigmoid()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=15, out_features=10, bias=True)
+    (4): Sigmoid()
+    (5): Dropout(p=0.2, inplace=False)
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): Sigmoid()
+    (8): Dropout(p=0.2, inplace=False)
+  )
+)
+Early stopping at epoch: 4
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.2, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 16.2
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0.2}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): Sigmoid()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=10, out_features=15, bias=True)
+    (4): Sigmoid()
+    (5): Dropout(p=0.2, inplace=False)
+    (6): Linear(in_features=15, out_features=10, bias=True)
+    (7): Sigmoid()
+    (8): Dropout(p=0.2, inplace=False)
+    (9): Linear(in_features=10, out_features=1, bias=True)
+    (10): Sigmoid()
+    (11): Dropout(p=0.2, inplace=False)
+  )
+)
+Early stopping at epoch: 4
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.2, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 16.3
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0.2}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): Sigmoid()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=50, out_features=50, bias=True)
+    (4): Sigmoid()
+    (5): Dropout(p=0.2, inplace=False)
+    (6): Linear(in_features=50, out_features=1, bias=True)
+    (7): Sigmoid()
+    (8): Dropout(p=0.2, inplace=False)
+  )
+)
+Early stopping at epoch: 3
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.2, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 16.1
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0.3}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): Sigmoid()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=15, out_features=10, bias=True)
+    (4): Sigmoid()
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): Sigmoid()
+    (8): Dropout(p=0.3, inplace=False)
+  )
+)
+Early stopping at epoch: 3
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.3, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 9.6
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0.3}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): Sigmoid()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=10, out_features=15, bias=True)
+    (4): Sigmoid()
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Linear(in_features=15, out_features=10, bias=True)
+    (7): Sigmoid()
+    (8): Dropout(p=0.3, inplace=False)
+    (9): Linear(in_features=10, out_features=1, bias=True)
+    (10): Sigmoid()
+    (11): Dropout(p=0.3, inplace=False)
+  )
+)
+Early stopping at epoch: 7
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.3, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 10.0
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0.3}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): Sigmoid()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=50, out_features=50, bias=True)
+    (4): Sigmoid()
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Linear(in_features=50, out_features=1, bias=True)
+    (7): Sigmoid()
+    (8): Dropout(p=0.3, inplace=False)
+  )
+)
+Early stopping at epoch: 8
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.3, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 9.5
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0.5}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): Sigmoid()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=15, out_features=10, bias=True)
+    (4): Sigmoid()
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): Sigmoid()
+    (8): Dropout(p=0.5, inplace=False)
+  )
+)
+Early stopping at epoch: 5
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.5, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 2.9
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0.5}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): Sigmoid()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=10, out_features=15, bias=True)
+    (4): Sigmoid()
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=15, out_features=10, bias=True)
+    (7): Sigmoid()
+    (8): Dropout(p=0.5, inplace=False)
+    (9): Linear(in_features=10, out_features=1, bias=True)
+    (10): Sigmoid()
+    (11): Dropout(p=0.5, inplace=False)
+  )
+)
+Early stopping at epoch: 5
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.5, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 2.8
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.activation.Sigmoid'>, 'dropout': 0.5}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): Sigmoid()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=50, out_features=50, bias=True)
+    (4): Sigmoid()
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=50, out_features=1, bias=True)
+    (7): Sigmoid()
+    (8): Dropout(p=0.5, inplace=False)
+  )
+)
+Early stopping at epoch: 9
+Parameter Combination (<class 'torch.nn.modules.activation.Sigmoid'>, 0.5, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 2.6
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): Identity()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): Identity()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): Identity()
+  )
+)
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 40.4
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): Identity()
+    (2): Linear(in_features=10, out_features=15, bias=True)
+    (3): Identity()
+    (4): Linear(in_features=15, out_features=10, bias=True)
+    (5): Identity()
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): Identity()
+  )
+)
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 39.9
+
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): Identity()
+    (2): Linear(in_features=50, out_features=50, bias=True)
+    (3): Identity()
+    (4): Linear(in_features=50, out_features=1, bias=True)
+    (5): Identity()
+  )
+)
 Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 41.3
+ Accuracy: 40.5
 
-Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 41.2
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0.2}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): Identity()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=15, out_features=10, bias=True)
+    (4): Identity()
+    (5): Dropout(p=0.2, inplace=False)
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): Identity()
+    (8): Dropout(p=0.2, inplace=False)
+  )
+)
+Early stopping at epoch: 17
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.2, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 16.7
 
-Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 41.5
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0.2}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): Identity()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=10, out_features=15, bias=True)
+    (4): Identity()
+    (5): Dropout(p=0.2, inplace=False)
+    (6): Linear(in_features=15, out_features=10, bias=True)
+    (7): Identity()
+    (8): Dropout(p=0.2, inplace=False)
+    (9): Linear(in_features=10, out_features=1, bias=True)
+    (10): Identity()
+    (11): Dropout(p=0.2, inplace=False)
+  )
+)
+Early stopping at epoch: 3
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.2, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 16.1
 
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0.2}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): Identity()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=50, out_features=50, bias=True)
+    (4): Identity()
+    (5): Dropout(p=0.2, inplace=False)
+    (6): Linear(in_features=50, out_features=1, bias=True)
+    (7): Identity()
+    (8): Dropout(p=0.2, inplace=False)
+  )
+)
+Early stopping at epoch: 13
 Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.2, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 19.1
+ Accuracy: 16.5
 
-Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.2, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 18.3
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0.3}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): Identity()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=15, out_features=10, bias=True)
+    (4): Identity()
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): Identity()
+    (8): Dropout(p=0.3, inplace=False)
+  )
+)
+Early stopping at epoch: 5
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.3, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 9.5
 
-Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.2, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 18.4
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0.3}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): Identity()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=10, out_features=15, bias=True)
+    (4): Identity()
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Linear(in_features=15, out_features=10, bias=True)
+    (7): Identity()
+    (8): Dropout(p=0.3, inplace=False)
+    (9): Linear(in_features=10, out_features=1, bias=True)
+    (10): Identity()
+    (11): Dropout(p=0.3, inplace=False)
+  )
+)
+Early stopping at epoch: 10
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.3, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 9.6
 
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0.3}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): Identity()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=50, out_features=50, bias=True)
+    (4): Identity()
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Linear(in_features=50, out_features=1, bias=True)
+    (7): Identity()
+    (8): Dropout(p=0.3, inplace=False)
+  )
+)
+Early stopping at epoch: 4
 Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.3, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 7.5
+ Accuracy: 9.1
 
-Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.3, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 8.3
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0.5}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): Identity()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=15, out_features=10, bias=True)
+    (4): Identity()
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=10, out_features=1, bias=True)
+    (7): Identity()
+    (8): Dropout(p=0.5, inplace=False)
+  )
+)
+Early stopping at epoch: 8
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.5, [19, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 2.4
 
-Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.3, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 7.6
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 10, 15, 10, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0.5}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=10, bias=True)
+    (1): Identity()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=10, out_features=15, bias=True)
+    (4): Identity()
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=15, out_features=10, bias=True)
+    (7): Identity()
+    (8): Dropout(p=0.5, inplace=False)
+    (9): Linear(in_features=10, out_features=1, bias=True)
+    (10): Identity()
+    (11): Dropout(p=0.5, inplace=False)
+  )
+)
+Early stopping at epoch: 7
+Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.5, [19, 10, 15, 10, 1]) with keys ['activation', 'dropout', 'layer']
+ Accuracy: 2.6
 
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 50, 50, 1], 'activation': <class 'torch.nn.modules.linear.Identity'>, 'dropout': 0.5}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=50, bias=True)
+    (1): Identity()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=50, out_features=50, bias=True)
+    (4): Identity()
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=50, out_features=1, bias=True)
+    (7): Identity()
+    (8): Dropout(p=0.5, inplace=False)
+  )
+)
+Early stopping at epoch: 6
 Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.5, [19, 50, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 3.0
+ Accuracy: 2.4
 
-Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.5, [19, 50, 100, 50, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 3.0
-
-Parameter Combination (<class 'torch.nn.modules.linear.Identity'>, 0.5, [19, 100, 100, 1]) with keys ['activation', 'dropout', 'layer']
- Accuracy: 3.2
-
+Grid search took 1.1 minutes.

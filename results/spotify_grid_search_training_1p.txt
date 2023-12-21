@@ -1,27 +1,137 @@
+run: {'learning_rate': 0.01, 'batch_size': 32, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
 Parameter Combination (0.01, 32) with keys ['learning_rate', 'batch_size']
- Accuracy: 38.1
-
-Parameter Combination (0.01, 64) with keys ['learning_rate', 'batch_size']
- Accuracy: 35.0
-
-Parameter Combination (0.01, 128) with keys ['learning_rate', 'batch_size']
- Accuracy: 32.0
-
-Parameter Combination (0.05, 32) with keys ['learning_rate', 'batch_size']
- Accuracy: 41.1
-
-Parameter Combination (0.05, 64) with keys ['learning_rate', 'batch_size']
  Accuracy: 0.0
 
+run: {'learning_rate': 0.01, 'batch_size': 64, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.01, 64) with keys ['learning_rate', 'batch_size']
+ Accuracy: 31.8
+
+run: {'learning_rate': 0.01, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.01, 128) with keys ['learning_rate', 'batch_size']
+ Accuracy: 32.3
+
+run: {'learning_rate': 0.05, 'batch_size': 32, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.05, 32) with keys ['learning_rate', 'batch_size']
+ Accuracy: 39.5
+
+run: {'learning_rate': 0.05, 'batch_size': 64, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
+Parameter Combination (0.05, 64) with keys ['learning_rate', 'batch_size']
+ Accuracy: 38.8
+
+run: {'learning_rate': 0.05, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
 Parameter Combination (0.05, 128) with keys ['learning_rate', 'batch_size']
- Accuracy: 38.1
+ Accuracy: 0.0
 
+run: {'learning_rate': 0.1, 'batch_size': 32, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
 Parameter Combination (0.1, 32) with keys ['learning_rate', 'batch_size']
- Accuracy: 41.1
+ Accuracy: 40.3
 
+run: {'learning_rate': 0.1, 'batch_size': 64, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
 Parameter Combination (0.1, 64) with keys ['learning_rate', 'batch_size']
- Accuracy: 40.8
+ Accuracy: 0.0
 
+run: {'learning_rate': 0.1, 'batch_size': 128, 'layer': [19, 15, 10, 1], 'activation': <class 'torch.nn.modules.activation.ReLU'>, 'dropout': 0}
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=19, out_features=15, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=15, out_features=10, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=10, out_features=1, bias=True)
+    (5): ReLU()
+  )
+)
 Parameter Combination (0.1, 128) with keys ['learning_rate', 'batch_size']
- Accuracy: 40.2
+ Accuracy: 40.3
 
+Grid search took 0.9 minutes.
+(0.1, 128)
