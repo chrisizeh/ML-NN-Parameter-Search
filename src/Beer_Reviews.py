@@ -3,6 +3,7 @@
 
 # # Preprocessing + NN Playing for Beer Reviews
 
+# In[2]:
 
 
 import os
@@ -16,7 +17,7 @@ import arff
 
 # ## Load Dataset and create Dataframe
 
-# In[5]:
+# In[3]:
 
 
 data = arff.load(open('../data/beer_reviews.arff', 'r'))
@@ -28,11 +29,11 @@ df.columns
 
 # Use only 10% of the data
 
-# In[6]:
+# In[10]:
 
 
-# from sklearn.model_selection import train_test_split
-# _, df = train_test_split(df, test_size=0.1, random_state=42)
+from sklearn.model_selection import train_test_split
+_, df = train_test_split(df, test_size=0.1, random_state=42)
 
 
 # In[7]:
@@ -56,7 +57,7 @@ print(df.head())
 # 
 # The missing review profilenames are set to anonynoums, but otherwise kept, because the review is still done correctly.
 
-# In[9]:
+# In[4]:
 
 
 print(df[df.isna().any(axis=1)])
@@ -68,7 +69,7 @@ df.loc[df['brewery_id'] == 1193, 'beer_name'] = df.loc[df['brewery_id'] == 1193,
 print(df[df['brewery_id'] == 1193])
 
 
-# In[10]:
+# In[5]:
 
 
 print(df[df['brewery_id'] == 27])
@@ -99,19 +100,19 @@ if (1391043 in df.index):
     df.drop(1391043, inplace=True)
 
 
-# In[11]:
+# In[6]:
 
 
 df.loc[df['review_profilename'].isna(), 'review_profilename'] = 'Anonymous'
 
 
-# In[12]:
+# In[7]:
 
 
 len(df['beer_style'].unique())
 
 
-# In[211]:
+# In[8]:
 
 
 print(len(df.loc[df['beer_abv'].isna(), 'beer_name'].unique()))
@@ -132,7 +133,7 @@ print(means)
 df.loc[df['beer_abv'].isna(), 'beer_abv'] = df.loc[df['beer_abv'].isna()].apply(lambda row: means[row['beer_style']], axis=1)
 
 
-# In[216]:
+# In[9]:
 
 
 print(df[df.isna().any(axis=1)].count())
@@ -140,7 +141,7 @@ print(df[df.isna().any(axis=1)].count())
 
 # ## Bag of Word for Brewery and Beer Name
 
-# In[15]:
+# In[11]:
 
 
 from string import punctuation
@@ -151,7 +152,7 @@ import sklearn
 sklearn.set_config(transform_output="pandas")
 
 
-# In[16]:
+# In[12]:
 
 
 PUNCT_TO_REMOVE = punctuation
@@ -160,7 +161,7 @@ def remove_punctuation(text):
     return text.translate(str.maketrans('', '', PUNCT_TO_REMOVE))
 
 
-# In[17]:
+# In[13]:
 
 
 df["brewery_name"] = df["brewery_name"].str.lower()
@@ -173,7 +174,7 @@ df["text"] = df["brewery_name"] + " " + df["beer_name"]
 df['text']
 
 
-# In[18]:
+# In[14]:
 
 
 cnt = Counter()
@@ -188,7 +189,7 @@ print(len(counts))
 print(FREQWORDS)
 
 
-# In[19]:
+# In[15]:
 
 
 n_rare = sum([i <= 100 for i in counts])
@@ -202,7 +203,7 @@ def remove_rarewords(text):
 df["text"] = df["text"].apply(lambda text: remove_rarewords(text))
 
 
-# In[20]:
+# In[16]:
 
 
 vectorizer = CountVectorizer()
@@ -226,14 +227,14 @@ words.index.equals(df.index)
 
 # ## Splitting Training and Test Set
 
-# In[23]:
+# In[17]:
 
 
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 
 
-# In[24]:
+# In[18]:
 
 
 le = LabelEncoder()
@@ -241,7 +242,7 @@ le.fit(df['beer_style'])
 df['class'] = le.transform(df['beer_style'])
 
 
-# In[26]:
+# In[19]:
 
 
 X = df.copy()
@@ -260,19 +261,25 @@ X.drop('class', axis=1, inplace=True)
 X
 
 
-# In[27]:
+# In[20]:
 
 
 X.index.equals(words.index)
 
 
-# In[28]:
+# In[24]:
+
+
+words = words[words.columns[:100]]
+
+
+# In[25]:
 
 
 X_train, X_valid, words_train, words_valid, y_train, y_valid = train_test_split(X, words, y, test_size=0.33, random_state=42)
 
 
-# In[29]:
+# In[26]:
 
 
 print(len(X_train))
@@ -344,7 +351,7 @@ plt.barh([x[0] for x in f_i],[x[1] for x in f_i])
 plt.show()
 
 
-# In[37]:
+# In[28]:
 
 
 X_train_bag = X_train.merge(words_new, how='inner', left_index=True, right_index=True)
@@ -365,7 +372,7 @@ X_valid_bag
 
 # # Find Solution for NN
 
-# In[40]:
+# In[29]:
 
 
 import torch
@@ -373,13 +380,13 @@ from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
 
 
-# In[41]:
+# In[30]:
 
 
 X_ttrain, X_test, y_ttrain, y_test = train_test_split(X_train_bag.values, y_train.values, test_size=0.3, random_state=42)
 
 
-# In[42]:
+# In[31]:
 
 
 print(X_ttrain)
@@ -389,7 +396,7 @@ print(y_ttrain.max())
 
 # ## Build torch dataset
 
-# In[43]:
+# In[32]:
 
 
 assert not np.any(np.isnan(X_ttrain))
@@ -398,7 +405,7 @@ assert not np.any(np.isnan(X_test))
 assert not np.any(np.isnan(y_test))
 
 
-# In[46]:
+# In[35]:
 
 
 device = (
@@ -431,7 +438,7 @@ test_ds = TensorDataset(X_test_tensor, y_test_tensor)
 valid_ds = TensorDataset(X_valid_tensor, y_valid_tensor)
 
 
-# In[47]:
+# In[37]:
 
 
 batch_size = 64
@@ -449,7 +456,7 @@ for XX, yy in train_dataloader:
 
 # ## Creating Models
 
-# In[ ]:
+# In[38]:
 
 
 # Define model
@@ -478,14 +485,14 @@ print(model)
 
 # ## Train the Model
 
-# In[ ]:
+# In[39]:
 
 
 loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.02)
 
 
-# In[ ]:
+# In[52]:
 
 
 def train(dataloader, model, loss_fn, optimizer):
@@ -493,7 +500,9 @@ def train(dataloader, model, loss_fn, optimizer):
     num_batches = len(dataloader)
     model.train()
     test_loss = 0
+    print(dataloader)
     for batch, (XX, yy) in enumerate(dataloader):
+        print('hh')
         XX, yy = XX.to(device), yy.to(device)
 
         # Compute prediction error
@@ -512,10 +521,10 @@ def train(dataloader, model, loss_fn, optimizer):
             current = (batch + 1) * len(XX)
             print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
 
-        return test_loss / num_batches
+    return test_loss / num_batches
 
 
-# In[ ]:
+# In[53]:
 
 
 from sklearn.metrics import f1_score, classification_report
@@ -537,7 +546,7 @@ def test(dataloader, model, loss_fn):
     return test_loss, correct
 
 
-# In[ ]:
+# In[54]:
 
 
 losses = []
@@ -644,6 +653,9 @@ test_small_ds = TensorDataset(X_test_small_tensor, y_test_small_tensor)
 
 
 # ## Run Searches
+
+# In[119]:
+
 
 
 # In[105]:
