@@ -121,7 +121,6 @@ class NNModel:
         plt.xlabel('Epochs')
         plt.ylabel("Accuracy")
         plt.savefig(f"../results/{name}_acc.png", bbox_inches="tight")
-        plt.clf()
 
         plt.plot(range(len(losses)), losses, label="Training")
         plt.plot(range(len(test_losses)), test_losses, label="Test")
@@ -129,7 +128,6 @@ class NNModel:
         plt.ylabel("Loss")
         plt.legend(loc="upper right")
         plt.savefig(f"../results/{name}_loss.png", bbox_inches="tight")
-        plt.clf()
     
 
     def run(self, params, train_ds, test_ds, epochs, out=False, name=None):
@@ -146,6 +144,8 @@ class NNModel:
         accs = []
 
         for t in range(epochs):
+            if out:
+                print(f"Epoch {t+1}\n-------------------------------")
             losses.append(self.train(train_dataloader, self.loss_fn, self.optimizer, out=out))
             acc, test_loss = self.test(test_dataloader, self.loss_fn, out=out)
 
@@ -155,6 +155,7 @@ class NNModel:
             if early_stopper.early_stop(test_loss):     
                 print("Early stopping at epoch:", t)
                 break
+
         if name:
             self.plot(losses, test_losses, accs, name)
         return acc

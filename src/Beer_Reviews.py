@@ -6,6 +6,7 @@
 # In[2]:
 
 
+
 import os
 import pandas as pd
 import numpy as np
@@ -32,8 +33,8 @@ df.columns
 # In[10]:
 
 
-from sklearn.model_selection import train_test_split
-_, df = train_test_split(df, test_size=0.1, random_state=42)
+# from sklearn.model_selection import train_test_split
+# _, df = train_test_split(df, test_size=0.1, random_state=42)
 
 
 # In[7]:
@@ -500,9 +501,7 @@ def train(dataloader, model, loss_fn, optimizer):
     num_batches = len(dataloader)
     model.train()
     test_loss = 0
-    print(dataloader)
     for batch, (XX, yy) in enumerate(dataloader):
-        print('hh')
         XX, yy = XX.to(device), yy.to(device)
 
         # Compute prediction error
@@ -553,7 +552,7 @@ losses = []
 test_losses = []
 accs = []
 
-epochs = 30
+epochs = 100
 for t in range(epochs):
     print(f"Epoch {t+1}\n-------------------------------")
     losses.append(train(train_dataloader, model, loss_fn, optimizer))
@@ -655,9 +654,6 @@ test_small_ds = TensorDataset(X_test_small_tensor, y_test_small_tensor)
 # ## Run Searches
 
 # In[119]:
-
-
-
 # In[105]:
 
 
@@ -686,7 +682,7 @@ nnmodel = NNModel(layer, device, acc_func=acc_func, loss_func=nn.CrossEntropyLos
 
 test_layer = [[len(X_ttrain[0]), 250, 164, 164, 104], [len(X_ttrain[0]), 25, 16, 16, 104], [len(X_ttrain[0]), 250, 164, 104]]
 dict_param_1 = {"learning_rate": [0.001, 0.01, 0.05], "batch_size": [32, 64, 128]}
-best, acc = nnmodel.grid_search(dict_param_1, train_small_ds, test_small_ds, epochs=30)
+best, acc = nnmodel.grid_search(dict_param_1, train_small_ds, test_small_ds, epochs=50)
 print(best)
 
 
@@ -696,7 +692,7 @@ print(best)
 nnmodel.defaults["learning_rate"] = best["learning_rate"]
 nnmodel.defaults["batch_size"] = best["batch_size"]
 dict_param_2 = {"activation": [nn.ReLU, nn.Sigmoid, nn.Identity], "dropout": [0, 0.2, 0.3, 0.5], "layer": test_layer}
-best, acc = nnmodel.grid_search(dict_param_2, train_small_ds, test_small_ds, epochs=30)
+best, acc = nnmodel.grid_search(dict_param_2, train_small_ds, test_small_ds, epochs=50)
 print(best)
 
 
@@ -712,7 +708,7 @@ nnmodel.defaults["layer"] = best["layer"]
 
 
 print(nnmodel.defaults)
-acc = nnmodel.run(nnmodel.defaults, train_ds, test_ds, 30, out=True, name="beer_grid_res")
+acc = nnmodel.run(nnmodel.defaults, train_ds, test_ds, 100, out=True, name="beer_grid_res")
 print(acc)
 
 
@@ -742,7 +738,7 @@ nnmodel = NNModel(layer, device, acc_func=acc_func, loss_func=nn.CrossEntropyLos
 
 
 init_param = {"learning_rate": grid_best["learning_rate"], "batch_size": grid_best["batch_size"]}
-best, acc = nnmodel.local_search(init_param, train_small_ds, test_small_ds, steps=5, epochs=30)
+best, acc = nnmodel.local_search(init_param, train_small_ds, test_small_ds, steps=5, epochs=50)
 print(best)
 
 
@@ -752,7 +748,7 @@ print(best)
 nnmodel.defaults["learning_rate"] = best["learning_rate"]
 nnmodel.defaults["batch_size"] = best["batch_size"]
 init_param = {"layer": grid_best["layer"], "dropout": grid_best["dropout"]}
-best, acc = nnmodel.local_search(init_param, train_small_ds, test_small_ds, steps=5, epochs=30)
+best, acc = nnmodel.local_search(init_param, train_small_ds, test_small_ds, steps=5, epochs=50)
 
 
 # In[ ]:
@@ -766,7 +762,7 @@ nnmodel.defaults["layer"] = best["layer"]
 
 
 print(nnmodel.defaults)
-acc = nnmodel.run(nnmodel.defaults, train_ds, test_ds, 30, out=True, name="beer_local_res")
+acc = nnmodel.run(nnmodel.defaults, train_ds, test_ds, 100, out=True, name="beer_local_res")
 print(acc)
 
 
