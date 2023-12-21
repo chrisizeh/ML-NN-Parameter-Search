@@ -65,7 +65,7 @@ class NNModel:
         print(self.model)
 
 
-    def train(self, dataloader, loss_fn, optimizer):
+    def train(self, dataloader, loss_fn, optimizer, out=False):
         size = len(dataloader.dataset)
         self.model.train()
         for batch, (XX, yy) in enumerate(dataloader):
@@ -84,10 +84,11 @@ class NNModel:
 
             if batch % 100 == 0:
                 loss, current = loss.item(), (batch + 1) * len(XX)
+                if out:
+                    print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
 
 
-    def test(self, dataloader, loss_fn):
-        size = len(dataloader.dataset)
+    def test(self, dataloader, loss_fn, out=False):
         num_batches = len(dataloader)
         self.model.eval()
         test_loss, correct = 0, 0
@@ -101,12 +102,13 @@ class NNModel:
                 test_loss += loss_fn(pred, yy).item()
                 correct += self.acc_func(pred, yy)
         test_loss /= num_batches
-        correct /= size
-        return (100*correct), test_loss
+        correct /= num_batches
+        if out:
+            print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
+        return (100*correct)
     
 
-    def run(self, params, train_ds, test_ds, epochs):
-        print("run: " + str(params))
+    def run(self, params, train_ds, test_ds, epochs, out=False):
         train_dataloader = DataLoader(train_ds, batch_size=params["batch_size"])
         test_dataloader = DataLoader(test_ds, batch_size=params["batch_size"])
 
@@ -116,9 +118,8 @@ class NNModel:
         early_stopper = EarlyStopper(patience=3)
 
         for t in range(epochs):
-            self.train(train_dataloader, self.loss_fn, self.optimizer)
-            acc, test_loss = self.test(test_dataloader, self.loss_fn)
-            print(acc, test_loss)
+            self.train(train_dataloader, self.loss_fn, self.optimizer, out=out)
+            acc, test_loss = self.test(test_dataloader, self.loss_fn, out=out)
             if early_stopper.early_stop(test_loss):     
                 print("Early stopping at epoch:", t)
                 break
