@@ -94,7 +94,7 @@ class NNModel:
                 if out:
                     print(f"loss: {train_loss:>7f}  [{current:>5d}/{size:>5d}]")
 
-            return train_loss / num_batches
+        return train_loss / num_batches
 
 
     def test(self, dataloader, loss_fn, out=False):
