@@ -4,6 +4,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from itertools import product
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 import random
 import time
@@ -114,13 +115,19 @@ class NNModel:
         correct /= num_batches
         if out:
             print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
-        return (100*correct), test_loss
+        return correct, test_loss
     
     def plot(self, losses, test_losses, accs, name):
+        print('losses', losses)
+        print('test_losses', test_losses)
+        print('accs', accs)
+        
+        plt.clf()
         plt.plot(range(len(accs)), accs)
         plt.xlabel('Epochs')
         plt.ylabel("Accuracy")
         plt.savefig(f"../results/{name}_acc.png", bbox_inches="tight")
+        plt.clf()
 
         plt.plot(range(len(losses)), losses, label="Training")
         plt.plot(range(len(test_losses)), test_losses, label="Test")
@@ -128,6 +135,7 @@ class NNModel:
         plt.ylabel("Loss")
         plt.legend(loc="upper right")
         plt.savefig(f"../results/{name}_loss.png", bbox_inches="tight")
+        plt.clf()
     
 
     def run(self, params, train_ds, test_ds, epochs, out=False, name=None):
@@ -150,7 +158,7 @@ class NNModel:
             acc, test_loss = self.test(test_dataloader, self.loss_fn, out=out)
 
             accs.append(acc)
-            test_losses.append(test_losses)
+            test_losses.append(test_loss)
 
             if early_stopper.early_stop(test_loss):     
                 print("Early stopping at epoch:", t)

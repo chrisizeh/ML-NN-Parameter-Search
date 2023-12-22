@@ -3,7 +3,7 @@
 # Beer Reviews is too big - adding small to test
 beer_reviews.arff
 dataset.arff
-
+beer*.csv
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
