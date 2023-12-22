@@ -6,7 +6,6 @@
 # In[2]:
 
 
-
 import os
 import pandas as pd
 import numpy as np
@@ -204,6 +203,13 @@ def remove_rarewords(text):
 df["text"] = df["text"].apply(lambda text: remove_rarewords(text))
 
 
+# In[ ]:
+
+
+del RAREWORDS
+del FREQWORDS
+
+
 # In[16]:
 
 
@@ -217,7 +223,7 @@ words
 # In[21]:
 
 
-df_bag = df.merge(words, how='left', left_index=True, right_index=True)
+# df_bag = df.merge(words, how='left', left_index=True, right_index=True)
 
 
 # In[22]:
@@ -262,6 +268,12 @@ X.drop('class', axis=1, inplace=True)
 X
 
 
+# In[ ]:
+
+
+del df
+
+
 # In[20]:
 
 
@@ -271,7 +283,7 @@ X.index.equals(words.index)
 # In[24]:
 
 
-words = words[words.columns[:100]]
+# words = words[words.columns[:100]]
 
 
 # In[25]:
@@ -371,6 +383,15 @@ X_valid_bag = X_valid.merge(words_valid[words_new.columns], how='inner', left_in
 X_valid_bag
 
 
+# In[ ]:
+
+
+del words
+del words_new
+del words_valid
+del words_train
+
+
 # # Find Solution for NN
 
 # In[29]:
@@ -437,6 +458,16 @@ y_valid_tensor = y_to_tensor(y_valid.values)
 train_ds = TensorDataset(X_train_tensor, y_train_tensor)
 test_ds = TensorDataset(X_test_tensor, y_test_tensor)
 valid_ds = TensorDataset(X_valid_tensor, y_valid_tensor)
+
+
+# In[ ]:
+
+
+del X_ttrain
+del X_test
+
+del y_ttrain
+del y_test
 
 
 # In[37]:
@@ -608,6 +639,17 @@ print(test(valid_dataloader, model, loss_fn))
 validate(valid_dataloader, model)
 
 
+# In[ ]:
+
+
+del model
+del loss_fn
+del optimizer
+
+del train_dataloader
+del test_dataloader
+
+
 # Result for validation set: 90.2%
 
 # # Parameter Search
@@ -654,6 +696,7 @@ test_small_ds = TensorDataset(X_test_small_tensor, y_test_small_tensor)
 # ## Run Searches
 
 # In[119]:
+
 # In[105]:
 
 
@@ -681,7 +724,7 @@ nnmodel = NNModel(layer, device, acc_func=acc_func, loss_func=nn.CrossEntropyLos
 
 
 test_layer = [[len(X_ttrain[0]), 250, 164, 164, 104], [len(X_ttrain[0]), 25, 16, 16, 104], [len(X_ttrain[0]), 250, 164, 104]]
-dict_param_1 = {"learning_rate": [0.001, 0.01, 0.05], "batch_size": [32, 64, 128]}
+dict_param_1 = {"learning_rate": [0.001, 0.01, 0.05], "batch_size": [320, 640, 1280]}
 best, acc = nnmodel.grid_search(dict_param_1, train_small_ds, test_small_ds, epochs=50)
 print(best)
 
