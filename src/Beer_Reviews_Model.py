@@ -1,400 +1,29 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Preprocessing + NN Playing for Beer Reviews
+# # Load Preprocessed Dataset
 
-# In[2]:
+# In[ ]:
 
 
-import os
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-import arff
-
-
-# ## Load Dataset and create Dataframe
-
-# In[3]:
-
-
-data = arff.load(open('../data/beer_reviews.arff', 'r'))
-attr = np.array(data['attributes'])
-numericals = [i[0] for i in attr if i[1] == 'INTEGER' or i[1] == 'REAL']
-df = pd.DataFrame(data['data'], columns=attr[:, 0])
-df.columns
-
-
-# Use only 10% of the data
-
-# In[10]:
-
-
-# from sklearn.model_selection import train_test_split
-# _, df = train_test_split(df, test_size=0.1, random_state=42)
-
-
-# In[7]:
-
-
-len(df)
-
-
-# In[8]:
-
-
-df.columns
-
-df['review_time'] = df['review_time'].apply(lambda sec: pd.Timestamp(sec, unit='s'))
-print(df.head())
-
-
-# ## Fix Missing Values
-# 
-# The rows with missing brewery name for id 1193 are found through a quick google search and added. For the ones with brewery id 27 where the beers already exist with the correct brewery, so I add it based on the dataset. For the others I google with the provided data.
-# 
-# The missing review profilenames are set to anonynoums, but otherwise kept, because the review is still done correctly.
-
-# In[4]:
-
-
-print(df[df.isna().any(axis=1)])
-print(df[df['brewery_name'].isna()])
-
-print(df[df['brewery_id'] == 1193])
-df.loc[df['brewery_id'] == 1193, 'brewery_name'] = 'Crailsheimer Engel-Bräu'
-df.loc[df['brewery_id'] == 1193, 'beer_name'] = df.loc[df['brewery_id'] == 1193, 'beer_name'].apply(lambda name: name.split(' WRONG')[0])
-print(df[df['brewery_id'] == 1193])
-
-
-# In[5]:
-
-
-print(df[df['brewery_id'] == 27])
-
-if (1391053 in df.index):
-    df.loc[1391053, 'brewery_id'] = 24831
-    df.loc[1391053, 'brewery_name'] = 'American Brewing Company'
-
-if (1391051 in df.index):
-    df.loc[1391051, 'brewery_id'] = 24831
-    df.loc[1391051, 'brewery_name'] = 'American Brewing Company'
-
-if (1391052 in df.index):  
-    df.loc[1391052, 'brewery_id'] = 24831
-    df.loc[1391052, 'brewery_name'] = 'American Brewing Company'
-
-if (1391049 in df.index):  
-    df.loc[1391049, 'brewery_id'] = 782
-    df.loc[1391049, 'brewery_name'] = 'City Brewing Company, LLC'
-    df.loc[1391049, 'beer_name'] = 'Side Pocket High Gravity Ale'
-
-if (1391050 in df.index):  
-    df.loc[1391050, 'brewery_id'] = 782
-    df.loc[1391050, 'brewery_name'] = 'City Brewing Company, LLC'
-    df.loc[1391050, 'beer_name'] = 'Side Pocket High Gravity Ale'
-
-if (1391043 in df.index):  
-    df.drop(1391043, inplace=True)
-
-
-# In[6]:
-
-
-df.loc[df['review_profilename'].isna(), 'review_profilename'] = 'Anonymous'
-
-
-# In[7]:
-
-
-len(df['beer_style'].unique())
-
-
-# In[8]:
-
-
-print(len(df.loc[df['beer_abv'].isna(), 'beer_name'].unique()))
-
-def create_mean(df):
-    means = {}
-    for style in df['beer_style'].unique():
-        mean_abv = df.loc[df['beer_style'] == style, 'beer_abv'].mean()
-        means[style] = round(mean_abv, 1)
-
-    return means
-
-def fill_mean(means, row):
-    return 
-
-means = create_mean(df)
-print(means)
-df.loc[df['beer_abv'].isna(), 'beer_abv'] = df.loc[df['beer_abv'].isna()].apply(lambda row: means[row['beer_style']], axis=1)
-
-
-# In[9]:
-
-
-print(df[df.isna().any(axis=1)].count())
-
-
-# ## Bag of Word for Brewery and Beer Name
-
-# In[11]:
-
-
-from string import punctuation
-from collections import Counter
-from sklearn.feature_extraction.text import CountVectorizer
-
-import sklearn
-sklearn.set_config(transform_output="pandas")
-
-
-# In[12]:
-
-
-PUNCT_TO_REMOVE = punctuation
-def remove_punctuation(text):
-    """custom function to remove the punctuation"""
-    return text.translate(str.maketrans('', '', PUNCT_TO_REMOVE))
-
-
-# In[13]:
-
-
-df["brewery_name"] = df["brewery_name"].str.lower()
-df["brewery_name"] = df["brewery_name"].apply(lambda text: remove_punctuation(text))
-
-df["beer_name"] = df["beer_name"].str.lower()
-df["beer_name"] = df["beer_name"].apply(lambda text: remove_punctuation(text))
-
-df["text"] = df["brewery_name"] + " " + df["beer_name"]
-df['text']
-
-
-# In[14]:
-
-
-cnt = Counter()
-for text in df["text"].values:
-    for word in text.split():
-        cnt[word] += 1
-        
-FREQWORDS = set([w for (w, wc) in cnt.most_common(20)])
-
-counts = list(cnt.values())
-print(len(counts))
-print(FREQWORDS)
-
-
-# In[15]:
-
-
-n_rare = sum([i <= 100 for i in counts])
-print(n_rare)
-RAREWORDS = set([w for (w, wc) in cnt.most_common()[:-n_rare-1:-1]])
-
-def remove_rarewords(text):
-    """custom function to remove the frequent words"""
-    return " ".join([word for word in str(text).split() if word not in RAREWORDS])
-
-df["text"] = df["text"].apply(lambda text: remove_rarewords(text))
-
 
 # In[ ]:
 
 
-del RAREWORDS
-del FREQWORDS
-
-
-# In[16]:
-
-
-vectorizer = CountVectorizer()
-X = vectorizer.fit_transform(df['text'])
-words = pd.DataFrame(X.toarray(), columns=vectorizer.get_feature_names_out())
-words.set_index(df.index, inplace=True)
-words
-
-
-# In[21]:
-
-
-# df_bag = df.merge(words, how='left', left_index=True, right_index=True)
-
-
-# In[22]:
-
-
-words.index.equals(df.index)
-
-
-# ## Splitting Training and Test Set
-
-# In[17]:
-
-
-from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
-
-
-# In[18]:
-
-
-le = LabelEncoder()
-le.fit(df['beer_style'])
-df['class'] = le.transform(df['beer_style'])
-
-
-# In[19]:
-
-
-X = df.copy()
-X.drop('brewery_name', axis=1, inplace=True)
-X.drop('brewery_id', axis=1, inplace=True)
-X.drop('beer_name', axis=1, inplace=True)
-X.drop('beer_beerid', axis=1, inplace=True)
-X.drop('beer_style', axis=1, inplace=True)
-X.drop('review_profilename', axis=1, inplace=True)
-X.drop('review_time', axis=1, inplace=True)
-X.drop('text', axis=1, inplace=True)
-
-y = df['class']
-X.drop('class', axis=1, inplace=True)
-# X = normalize(X, norm='l2')
-X
-
-
-# In[ ]:
-
-
-del df
-
-
-# In[20]:
-
-
-X.index.equals(words.index)
-
-
-# In[24]:
-
-
-# words = words[words.columns[:100]]
-
-
-# In[25]:
-
-
-X_train, X_valid, words_train, words_valid, y_train, y_valid = train_test_split(X, words, y, test_size=0.33, random_state=42)
-
-
-# In[26]:
-
-
-print(len(X_train))
-print(len(words_train))
-print(len(y_train))
-print(X_train.index.equals(y_train.index))
-print(X_train.index.equals(words_train.index))
-print(y.max())
-
-
-# ## Scaling, Feature Selection, Outlier
-
-# ## Check for Outliers
-
-# In[30]:
-
-
-X_train.hist(bins=30, figsize=(15, 10))
-
-
-# In[31]:
-
-
-len(X_train[X_train['beer_abv'] > 31])
-len(X_train[X_train['beer_abv'] > 50])
-X_train[X_train['beer_abv'] > 50]
-
-
-# Looks like there exist really that strong beers.
-
-# ## Feature Selection
-
-# In[32]:
-
-
-from sklearn.feature_selection import SelectFromModel
-from sklearn.ensemble import RandomForestClassifier
-
-
-# In[33]:
-
-
-clf = RandomForestClassifier(n_estimators=20, max_features=100).fit(words_train, y_train)
-model = SelectFromModel(clf, prefit=True)
-words_new = model.transform(words_train)
-words_new
-
-
-# In[34]:
-
-
-# words_new = words_train[words_train.columns[:100]]
-
-
-# In[35]:
-
-
-words_train.index.equals(X_train.index)
-
-
-# In[36]:
-
-
-f_i = list(zip(clf.feature_names_in_,clf.feature_importances_))
-f_i.sort(key = lambda x : x[1])
-f_i = f_i[:20]
-plt.barh([x[0] for x in f_i],[x[1] for x in f_i])
-
-plt.show()
-
-
-# In[28]:
-
-
-X_train_bag = X_train.merge(words_new, how='inner', left_index=True, right_index=True)
-
-
-# In[38]:
-
-
-X_train_bag
-
-
-# In[45]:
-
-
-X_valid_bag = X_valid.merge(words_valid[words_new.columns], how='inner', left_index=True, right_index=True)
-X_valid_bag
-
-
-# In[ ]:
-
-
-del words
-del words_new
-del words_valid
-del words_train
+X_valid_bag = pd.read_csv('../data/beer_target_valid.csv')
+y_valid = pd.read_csv('../data/beer_valid.csv')
+X_train_bag = pd.read_csv('../data/beer_train.csv')
+y_train = pd.read_csv('../data/beer_target_train.csv')
 
 
 # # Find Solution for NN
 
-# In[29]:
+# In[97]:
 
 
 import torch
@@ -402,13 +31,14 @@ from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
 
 
-# In[30]:
+# In[98]:
 
+from sklearn.model_selection import train_test_split
 
 X_ttrain, X_test, y_ttrain, y_test = train_test_split(X_train_bag.values, y_train.values, test_size=0.3, random_state=42)
 
 
-# In[31]:
+# In[99]:
 
 
 print(X_ttrain)
@@ -418,7 +48,7 @@ print(y_ttrain.max())
 
 # ## Build torch dataset
 
-# In[32]:
+# In[100]:
 
 
 assert not np.any(np.isnan(X_ttrain))
@@ -427,7 +57,7 @@ assert not np.any(np.isnan(X_test))
 assert not np.any(np.isnan(y_test))
 
 
-# In[35]:
+# In[101]:
 
 
 device = (
@@ -460,7 +90,7 @@ test_ds = TensorDataset(X_test_tensor, y_test_tensor)
 valid_ds = TensorDataset(X_valid_tensor, y_valid_tensor)
 
 
-# In[ ]:
+# In[102]:
 
 
 del X_ttrain
@@ -470,7 +100,7 @@ del y_ttrain
 del y_test
 
 
-# In[37]:
+# In[103]:
 
 
 batch_size = 64
@@ -488,7 +118,7 @@ for XX, yy in train_dataloader:
 
 # ## Creating Models
 
-# In[38]:
+# In[126]:
 
 
 # Define model
@@ -497,7 +127,7 @@ class NeuralNetwork(nn.Module):
         super().__init__()
         self.flatten = nn.Flatten()
         self.linear_relu_stack = nn.Sequential(
-            nn.Linear(len(X_ttrain[0]), 250),
+            nn.Linear(len(train_ds[0][0]), 250),
             nn.ReLU(),
             nn.Linear(250, 164),
             nn.ReLU(),
@@ -517,14 +147,14 @@ print(model)
 
 # ## Train the Model
 
-# In[39]:
+# In[127]:
 
 
 loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.02)
 
 
-# In[52]:
+# In[128]:
 
 
 def train(dataloader, model, loss_fn, optimizer):
@@ -554,7 +184,7 @@ def train(dataloader, model, loss_fn, optimizer):
     return test_loss / num_batches
 
 
-# In[53]:
+# In[129]:
 
 
 from sklearn.metrics import f1_score, classification_report
@@ -576,14 +206,14 @@ def test(dataloader, model, loss_fn):
     return test_loss, correct
 
 
-# In[54]:
+# In[130]:
 
 
 losses = []
 test_losses = []
 accs = []
 
-epochs = 100
+epochs = 50
 for t in range(epochs):
     print(f"Epoch {t+1}\n-------------------------------")
     losses.append(train(train_dataloader, model, loss_fn, optimizer))
@@ -661,26 +291,26 @@ del test_dataloader
 
 # Use only 2% of the data for parameter testing.
 
-# In[62]:
+# In[138]:
 
 
 _, X_train_bag_small, _, y_train_small = train_test_split(X_train_bag, y_train, test_size=0.01, random_state=42)
 
 
-# In[63]:
+# In[139]:
 
 
 print(len(X_train_bag_small))
 print(len(y_train_small))
 
 
-# In[64]:
+# In[140]:
 
 
 X_ttrain_small, X_test_small, y_ttrain_small, y_test_small = train_test_split(X_train_bag_small.values, y_train_small.values, test_size=0.3, random_state=42)
 
 
-# In[65]:
+# In[141]:
 
 
 X_train_small_tensor = X_to_tensor(X_ttrain_small)
@@ -695,9 +325,10 @@ test_small_ds = TensorDataset(X_test_small_tensor, y_test_small_tensor)
 
 # ## Run Searches
 
-# In[119]:
+# In[142]:
 
-# In[105]:
+
+# In[144]:
 
 
 def acc_func(loc_pred, loc_y):
@@ -705,31 +336,31 @@ def acc_func(loc_pred, loc_y):
     return f1_score(loc_y, loc_pred.argmax(1), average='weighted')
 
 
-# In[121]:
+# In[145]:
 
 
 from NNModel import NNModel
 
 
-# In[107]:
+# In[147]:
 
 
-layer = [len(X_ttrain[0]), 250, 164, 164, 104]
+layer = [len(train_small_ds[0][0]), 250, 164, 164, 104]
 nnmodel = NNModel(layer, device, acc_func=acc_func, loss_func=nn.CrossEntropyLoss)
 
 
 # ## Grid Search
 
-# In[ ]:
+# In[148]:
 
 
-test_layer = [[len(X_ttrain[0]), 250, 164, 164, 104], [len(X_ttrain[0]), 25, 16, 16, 104], [len(X_ttrain[0]), 250, 164, 104]]
+test_layer = [[len(train_small_ds[0][0]), 250, 164, 164, 104], [len(train_small_ds[0][0]), 25, 16, 16, 104], [len(train_small_ds[0][0]), 250, 164, 104]]
 dict_param_1 = {"learning_rate": [0.001, 0.01, 0.05], "batch_size": [320, 640, 1280]}
 best, acc = nnmodel.grid_search(dict_param_1, train_small_ds, test_small_ds, epochs=50)
 print(best)
 
 
-# In[93]:
+# In[ ]:
 
 
 nnmodel.defaults["learning_rate"] = best["learning_rate"]
@@ -739,7 +370,7 @@ best, acc = nnmodel.grid_search(dict_param_2, train_small_ds, test_small_ds, epo
 print(best)
 
 
-# In[86]:
+# In[ ]:
 
 
 nnmodel.defaults["activation"] = best["activation"]
@@ -755,7 +386,7 @@ acc = nnmodel.run(nnmodel.defaults, train_ds, test_ds, 100, out=True, name="beer
 print(acc)
 
 
-# In[235]:
+# In[ ]:
 
 
 acc = test(valid_dataloader, nnmodel.model, nnmodel.loss_fn)
@@ -826,8 +457,8 @@ from sklearn.ensemble import RandomForestClassifier
 
 rf = RandomForestClassifier(n_estimators=20, max_features=100, random_state=42)  
 
-rf.fit(X_train, y_train)
-y_prediction = rf.predict(X_valid)
+rf.fit(X_train_bag, y_train)
+y_prediction = rf.predict(X_valid_bag)
 
 
 # In[ ]:
