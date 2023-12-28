@@ -118,7 +118,7 @@ class NNModel:
         test_loss /= num_batches
         correct /= num_batches
         if out:
-            print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
+            print(f"Test Error: \n Accuracy: {correct:>0.5f}%, Avg loss: {test_loss:>8f} \n")
         return correct, test_loss
     
     def plot(self, losses, test_losses, accs, name):
@@ -175,7 +175,7 @@ class NNModel:
     def run_cv(self, params, train_ds, test_ds, epochs, out=False, name=None, cv=True, k_folds=3):
         
         if(cv==False):
-            acc = self.run(self, params, train_ds, test_ds, epochs, out=False)
+            cv_acc = self.run(params, train_ds, test_ds, epochs, out=False)
         else:
             
             kfold = KFold(n_splits=k_folds, shuffle=True)
@@ -217,7 +217,7 @@ class NNModel:
                 if name:
                     self.plot(losses, test_losses, accs, name)
                  
-                print("The actual fold accuracy is ", acc, "\n")   
+                print(f"The actual fold accuracy is {acc:>0.5f}\n")   
 
                 cv_acc += acc
             cv_acc /= k_folds
@@ -233,7 +233,7 @@ class NNModel:
         return params
 
 
-    def grid_search(self, dict_param, train_ds, test_ds, epochs=2, cv=True, k_folds=3):
+    def grid_search(self, dict_param, train_ds, test_ds, epochs=2, cv=False, k_folds=3):
         start = time.time()
         best_param = {}
         best_acc = -1
@@ -246,7 +246,7 @@ class NNModel:
             if(acc > best_acc):
                 best_param = param_comb
                 best_acc = acc
-            print(f"Parameter Combination {str(param_comb)} with keys {str(keys)}\n Accuracy: {acc:>0.1f}\n")
+            print(f"Parameter Combination {str(param_comb)} with keys {str(keys)}\n Accuracy: {acc:>0.5f}\n")
         end = time.time()
         print(f"Grid search took {round((end - start)/60, 1)} minutes.")
 
@@ -276,7 +276,7 @@ class NNModel:
         return param_list
 
 
-    def local_search(self, init_param, train_ds, test_ds, epochs=2, steps=50, cv=True, k_folds=3): 
+    def local_search(self, init_param, train_ds, test_ds, epochs=2, steps=50, cv=False, k_folds=3): 
         best_param = copy.deepcopy(init_param)
         start = time.time()
         keys = list(init_param.keys())
@@ -285,9 +285,9 @@ class NNModel:
         
         for i in range(steps):
             print(f"Step {i}")
-            print(f"Best Params, Parameter Combination {str(best_param)}\n Accuracy: {best_acc:>0.1f}\n")
+            print(f"Best Params, Parameter Combination {str(best_param)}\n Accuracy: {best_acc:>0.5f}\n")
             neighbor_params = self.neighborhood(best_param)
-            params, acc = self.grid_search(neighbor_params, train_ds, test_ds, epochs=epochs)
+            params, acc = self.grid_search(neighbor_params, train_ds, test_ds, epochs=epochs, cv=cv, k_folds=k_folds)
 
             if(acc > best_acc):
                 best_acc = acc
