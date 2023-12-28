@@ -1,0 +1,27 @@
+--------------------------------
+FOLD 0
+--------------------------------
+Early stopping at epoch: 3
+The actual fold accuracy is  0.4538153062264125 
+
+FOLD 1
+--------------------------------
+Early stopping at epoch: 6
+The actual fold accuracy is  0.437411841419008 
+
+FOLD 2
+--------------------------------
+Early stopping at epoch: 0
+The actual fold accuracy is  0.45545679165257347 
+
+FOLD 3
+--------------------------------
+Early stopping at epoch: 0
+The actual fold accuracy is  0.4880921377076043 
+
+FOLD 4
+--------------------------------
+Early stopping at epoch: 0
+The actual fold accuracy is  0.4809747123055988 
+
+0.46315015786223945

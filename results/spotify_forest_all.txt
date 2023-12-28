@@ -1,3 +1,5 @@
 Mean Squared Error: 0.014089630520953056
 R-squared: 0.4554542890758274
 Root Mean Squared Error: 0.014089630520953056
+Cross validation RMSE: 0.13211308186204948
+Cross validation R-squared: 0.3246342599712545

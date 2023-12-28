@@ -1,10 +1,14 @@
 import torch
 from torch import nn
-from torch.utils.data import DataLoader, TensorDataset
+from torch.utils.data import DataLoader, TensorDataset, SubsetRandomSampler
 from itertools import product
+from sklearn import linear_model
+from sklearn.model_selection import KFold
+            
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import pandas as pd
 
 import random
 import time
@@ -67,6 +71,11 @@ class NNModel:
                 layer_nn.append(nn.Dropout(dropout))
 
         self.model.linear_relu_stack = nn.Sequential(*layer_nn)
+        
+    def reset_model(self):
+        for layer in self.model.children():
+            #if hasattr(layer, 'reset_parameters'):
+            layer.reset_parameters()
 
 
     def train(self, dataloader, loss_fn, optimizer, out=False):
@@ -168,6 +177,56 @@ class NNModel:
             self.plot(losses, test_losses, accs, name)
         return acc
     
+    def run_cv(self, params, train_ds, test_ds, epochs, out=False, name=None, cv=True, k_folds=3):
+        
+        if(cv==False):
+            acc = self.run(self, params, train_ds, test_ds, epochs, out=False)
+        else:
+            self.loss_fn = self.loss_func()
+            self.optimizer = torch.optim.SGD(self.model.parameters(), lr=params["learning_rate"])
+            early_stopper = EarlyStopper(patience=3)
+            
+            kfold = KFold(n_splits=k_folds, shuffle=True)
+            print('--------------------------------')
+
+            cv_acc = 0
+            for fold, (train_ids, test_ids) in enumerate(kfold.split(train_ds)):
+                
+                print(f'FOLD {fold}')
+                print('--------------------------------')
+                
+                train_subsampler = SubsetRandomSampler(train_ids)
+                valid_subsampler = SubsetRandomSampler(test_ids)
+            
+                train_dataloader = DataLoader(train_ds, batch_size=params["batch_size"], sampler=train_subsampler)
+                valid_dataloader = DataLoader(train_ds, batch_size=params["batch_size"], sampler=valid_subsampler)
+
+                self.create_model(params["layer"], params["activation"], params["dropout"])
+                losses = []
+                test_losses = []
+                accs = []
+
+                for t in range(epochs):
+                    if out:
+                        print(f"Epoch {t+1}\n-------------------------------")
+                    losses.append(self.train(train_dataloader, self.loss_fn, self.optimizer, out=out))
+                    acc, test_loss = self.test(valid_dataloader, self.loss_fn, out=out)
+
+                    accs.append(acc)
+                    test_losses.append(test_loss)
+
+                    if early_stopper.early_stop(test_loss):     
+                        print("Early stopping at epoch:", t)
+                        break
+
+                if name:
+                    self.plot(losses, test_losses, accs, name)
+                 
+                print("The actual fold accuracy is ", acc, "\n")   
+
+                cv_acc += acc
+            cv_acc /= k_folds
+        return cv_acc
 
     def get_all_params(self, test_params, keys):
         params = {}
