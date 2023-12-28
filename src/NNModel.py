@@ -71,11 +71,6 @@ class NNModel:
                 layer_nn.append(nn.Dropout(dropout))
 
         self.model.linear_relu_stack = nn.Sequential(*layer_nn)
-        
-    def reset_model(self):
-        for layer in self.model.children():
-            #if hasattr(layer, 'reset_parameters'):
-            layer.reset_parameters()
 
 
     def train(self, dataloader, loss_fn, optimizer, out=False):
@@ -182,9 +177,6 @@ class NNModel:
         if(cv==False):
             acc = self.run(self, params, train_ds, test_ds, epochs, out=False)
         else:
-            self.loss_fn = self.loss_func()
-            self.optimizer = torch.optim.SGD(self.model.parameters(), lr=params["learning_rate"])
-            early_stopper = EarlyStopper(patience=3)
             
             kfold = KFold(n_splits=k_folds, shuffle=True)
             print('--------------------------------')
@@ -202,6 +194,9 @@ class NNModel:
                 valid_dataloader = DataLoader(train_ds, batch_size=params["batch_size"], sampler=valid_subsampler)
 
                 self.create_model(params["layer"], params["activation"], params["dropout"])
+                self.loss_fn = self.loss_func()
+                self.optimizer = torch.optim.SGD(self.model.parameters(), lr=params["learning_rate"])
+                early_stopper = EarlyStopper(patience=3)
                 losses = []
                 test_losses = []
                 accs = []
