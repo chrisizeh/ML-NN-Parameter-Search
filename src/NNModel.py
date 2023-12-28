@@ -233,7 +233,7 @@ class NNModel:
         return params
 
 
-    def grid_search(self, dict_param, train_ds, test_ds, epochs=2):
+    def grid_search(self, dict_param, train_ds, test_ds, epochs=2, cv=True, k_folds=3):
         start = time.time()
         best_param = {}
         best_acc = -1
@@ -242,7 +242,7 @@ class NNModel:
         keys = list(dict_param.keys())
         for param_comb in iter_params:
             params = self.get_all_params(param_comb, keys)
-            acc = self.run(params, train_ds, test_ds, epochs)
+            acc = self.run_cv(params, train_ds, test_ds, epochs, cv=cv, k_folds=k_folds)
             if(acc > best_acc):
                 best_param = param_comb
                 best_acc = acc
@@ -276,12 +276,12 @@ class NNModel:
         return param_list
 
 
-    def local_search(self, init_param, train_ds, test_ds, epochs=2, steps=50): 
+    def local_search(self, init_param, train_ds, test_ds, epochs=2, steps=50, cv=True, k_folds=3): 
         best_param = copy.deepcopy(init_param)
         start = time.time()
         keys = list(init_param.keys())
         params = self.get_all_params(list(best_param.values()), list(best_param.keys()))
-        best_acc = self.run(params, train_ds, test_ds, epochs)
+        best_acc = self.run_cv(params, train_ds, test_ds, epochs, cv=cv, k_folds=k_folds)
         
         for i in range(steps):
             print(f"Step {i}")
